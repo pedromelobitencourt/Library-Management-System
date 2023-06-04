@@ -5,17 +5,19 @@ public class Emprestimo {
     private int qntRenovacoes;
     private final int prazoDias;
     private final Usuario usuario;
+    private final Exemplar exemplar;
 
-    public Emprestimo(Calendar data, int qntRenovacoes, int prazoDias, Usuario usuario) {
+    public Emprestimo(Calendar data, int qntRenovacoes, int prazoDias, Usuario usuario, Exemplar exemplar) {
         // TODO: Verificação de Exceções
 
         this.data = data;
         this.qntRenovacoes = qntRenovacoes;
         this.prazoDias = prazoDias;
         this.usuario = usuario;
+        this.exemplar = exemplar;
     }
 
-    private void setData(Calendar data) { // Quando renovar, troca-se a data
+    public void setData(Calendar data) { // Quando renovar, troca-se a data
         this.data = data;
     }
 
@@ -37,5 +39,9 @@ public class Emprestimo {
 
     public Usuario getUsuario() {
         return this.usuario;
+    }
+
+    public Exemplar getExemplar() {
+        return this.exemplar;
     }
 }
