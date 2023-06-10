@@ -51,4 +51,8 @@ public class Usuario {
 
         this.emprestimos.add(emprestimo);
     }
+
+    public void executarInterface() {
+        IUsuario.interfaceUsuario();
+    }
 }
