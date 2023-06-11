@@ -30,4 +30,16 @@ public class Exemplar {
     public Livro getLivro() {
         return this.livro;
     }
+
+    @Override
+    public String toString() {
+        String ans = this.getLivro().toString();
+        ans += "Código: " + this.getCodigo() + "\n";
+        ans += "Disponibilidade: ";
+
+        if(this.getDisponivel()) ans += "disponível\n";
+        else ans += "indisponível\n";
+
+        return ans;
+    }
 }

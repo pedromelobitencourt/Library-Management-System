@@ -19,4 +19,12 @@ public class Autor {
     public String getNacionalidade() {
         return this.nacionalidade;
     }
+
+    @Override
+    public String toString() {
+        String ans = "Nome do autor: " + this.getNome() + "\n";
+        ans += "Nacionalidade do autor: " + this.getNacionalidade() + "\n";
+
+        return ans;
+    }
 }

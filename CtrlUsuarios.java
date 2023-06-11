@@ -1,13 +1,12 @@
-import java.util.HashMap;
+import java.util.ArrayList;
 
-public class CtrlUsuarios {
+public final class CtrlUsuarios { // Singleton tem final
     private static CtrlUsuarios instancia;
-    private HashMap<String, Usuario> usuarios;
+    private ArrayList<Usuario> usuarios;
 
     private CtrlUsuarios() {
-        usuarios = new HashMap<>();
+        usuarios = new ArrayList<Usuario>();
 
-        // Um Adm
         String nome = "Pedro";
         String cpf = "11111111111";
         String senha = "senha";
@@ -19,7 +18,7 @@ public class CtrlUsuarios {
         Endereco endereco = new Endereco(rua, numero, cep);
         Usuario usuario = new Usuario(nome, cpf, senha, endereco);
 
-        usuarios.put(cpf, usuario);
+        usuarios.add(usuario);
     }
 
     public static CtrlUsuarios getInstance() { // Apenas terá uma instância em todo o programa : Singleton
@@ -29,20 +28,38 @@ public class CtrlUsuarios {
         return instancia;
     }
 
-    public Usuario validarUsuario(String cpf, String senha) { // Se retornar null, não logou  
-        if (usuarios.containsKey(cpf)) {
-            Usuario usuario = usuarios.get(cpf);
+    public Usuario validarUsuario(String cpf, String senha) { // Se retornar null, não logou
+        for(Usuario usuario : usuarios) {
+            String cpfUsuario = usuario.getCpf();
+            String senhaUsuario = usuario.getSenha();
 
-            if (usuario.getSenha().equals(senha)) {
-                System.out.println("Logado com sucesso\n");
-                return usuario;
-            } else {
-                System.out.println("Senha incorreta\n");
-                return null;
+            if(cpfUsuario.equals(cpf)) {
+                if(senhaUsuario.equals(senha)) {
+                    System.out.println("Logado com sucesso");
+                    return usuario;
+                }
+                else {
+                    System.out.println("Senha incorreta");
+                    return null;
+                }
             }
         }
 
         System.out.println("Não há esse usuário\n");
         return null;
+
+        // if (usuarios.containsKey(cpf)) {
+        //     Usuario usuario = usuarios.get(cpf);
+
+        //     if (usuario.getSenha().equals(senha)) {
+        //         System.out.println("Logado com sucesso\n");
+        //         return usuario;
+        //     } else {
+        //         System.out.println("Senha incorreta\n");
+        //         return null;
+        //     }
+        // }
+
+        
     }
 }

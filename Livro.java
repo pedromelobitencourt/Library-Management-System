@@ -29,4 +29,14 @@ public class Livro {
     public Autor getAutor() {
         return this.autor;
     }
+
+    @Override
+    public String toString() {
+        String ans = "Nome do livro: " + this.getNome() + "\n";
+        ans += this.getAutor().toString();
+        ans += "ISBN do livro: " + this.getISBN() + "\n";
+        ans += "Idioma do livro: " + this.getIdioma() + "\n";
+
+        return ans;
+    }
 }

@@ -1,59 +1,54 @@
 import java.util.ArrayList;
-import java.util.HashMap;
+// import java.util.HashMap;
+import java.util.HashSet;
 
-public class CtrlExemplar {
+public final class CtrlExemplar { // TODO: Transformar em Singleton
     private static int CODIGO = 1;
 
-    private HashMap<String, ArrayList<Exemplar> > exemplares; // Pesquisa pelo nome do livro
-
-    //private ArrayList<Exemplar> exemplares;
+    // Sempre que for pesquisar por um livro, terá que pesquisar o nome
+    //private HashMap<String, ArrayList<Exemplar> > exemplares; // Pesquisa pelo nome do livro : O(1)
+    private static ArrayList<Exemplar> exemplares; // O(n)
 
     public void cadastrarExemplar(Livro livro) {
-        Exemplar exemplar = new Exemplar(CODIGO++, livro);
-        String nomeLivro = livro.getNome();
+        Exemplar exemplarNovo = new Exemplar(CODIGO++, livro);
 
-        if(!exemplares.containsKey(nomeLivro)) {
-            ArrayList<Exemplar> ex = new ArrayList<Exemplar>();
-
-            ex.add(exemplar);
-            exemplares.put(nomeLivro, ex);
-        }
-        else {
-            ArrayList<Exemplar> ex = exemplares.get(nomeLivro); // Ver se atualizou a lista
-
-            ex.add(exemplar);
-        }
-
-        // exemplares.add(exemplar);
+        exemplares.add(exemplarNovo);
     }
 
-    public ArrayList<Exemplar> pesquisarExemplar(Exemplar exemplar) {
-        String nomeLivro = exemplar.getLivro().getNome();
+    public static HashSet<Exemplar> pesquisarExemplarNome(String nomeLivro) {
+        HashSet<Exemplar> exemplaresProcurados = new HashSet<Exemplar>();
 
-        if(!exemplares.containsKey(nomeLivro)) {
-            // TODO: não tem
+        for(Exemplar exemplar : exemplares) {
+            if(exemplar.getLivro().getNome().equals(nomeLivro))
+                exemplaresProcurados.add(exemplar);
         }
-
-        ArrayList<Exemplar> exemplaresPesquisados = exemplares.get(nomeLivro);
         
-        return exemplaresPesquisados;
+        return exemplaresProcurados;
     }
 
     public void removerExemplar(Exemplar exemplar) {
-        String nomeLivro = exemplar.getLivro().getNome();
+        boolean removido = false;
 
-        ArrayList<Exemplar> exemplaresLivro = exemplares.get(nomeLivro);
-
-        int size = exemplaresLivro.size();
+        int size = exemplares.size();
 
         for(int i = 0; i < size; i++) {
-            Exemplar value = exemplaresLivro.get(i);
+            Exemplar value = exemplares.get(i);
 
             if(value.getCodigo() == exemplar.getCodigo()) {
-                exemplaresLivro.remove(i);
+                exemplares.remove(i);
+                removido = true;
                 break;
             }
         }
 
+        if(removido) System.out.println("O exemplar foi removido com sucesso");
+        else System.out.println("Não foi encontrado o exemplar:\n" + exemplar.toString());
+
+    }
+
+    public static HashSet<Exemplar> converterExemplaresEmSet() {
+        HashSet<Exemplar> set = new HashSet<Exemplar>(exemplares);
+
+        return set;
     }
 }

@@ -12,7 +12,53 @@ public class IPesquisar {
     private static final int CANCELAR = 0;
 
     private static void pesquisar(HashSet<Integer> options) {
-        
+        HashSet<Exemplar> exemplares = CtrlExemplar.converterExemplaresEmSet();
+        Scanner input = new Scanner(System.in);
+
+        for(Integer option : options) {
+            HashSet<Exemplar> optionSet;
+
+            switch(option) {
+                case NOME_LIVRO:
+                    System.out.print("Digite o nome do livro: ");
+                    String nomeLivro = input.nextLine();
+
+                    optionSet = CtrlExemplar.pesquisarExemplarNome(nomeLivro);
+                    exemplares.retainAll(optionSet);
+                    break;
+
+                case NOME_AUTOR:
+                    System.out.print("Digite o nome do autor do livro: ");
+                    String nomeAutor = input.nextLine();
+
+                    optionSet = CtrlExemplar.pesquisarExemplarNome(nomeAutor);
+                    exemplares.retainAll(optionSet);
+                    break;
+
+                case ISBN:
+                    System.out.print("Digite o ISBN do livro: ");
+                    String isbn = input.nextLine(); // TODO: long
+
+                    optionSet = CtrlExemplar.pesquisarExemplarNome(isbn);
+                    exemplares.retainAll(optionSet);
+                    break;
+                    
+                case IDIOMA:
+                    System.out.print("Digite o idioma do livro: ");
+                    String idioma = input.nextLine();
+
+                    optionSet = CtrlExemplar.pesquisarExemplarNome("nomeLivro");
+                    exemplares.retainAll(optionSet);
+                    break;
+                
+                case DISPONIVEL:
+                    boolean disponibilidade = true;
+
+                    optionSet = CtrlExemplar.pesquisarExemplarNome("nomeLivro");
+                    exemplares.retainAll(optionSet);
+                    break;
+            }
+        }
     }
 
     private static boolean querMaisFiltro() {
@@ -35,7 +81,7 @@ public class IPesquisar {
     public static void executar() {
         Scanner input = new Scanner(System.in);
 
-        HashSet<Integer> options = new HashSet<Integer>();
+        HashSet<Integer> options = new HashSet<Integer>(); // Sem repetição
         boolean sair = false;
 
         while(!sair) { // Menu
