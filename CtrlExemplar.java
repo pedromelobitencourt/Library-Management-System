@@ -11,7 +11,7 @@ public final class CtrlExemplar { // TODO: Transformar em Singleton
     private static ArrayList<Exemplar> exemplares; // O(n)
 
     private CtrlExemplar() {
-        this.exemplares = new ArrayList<Exemplar>();
+        exemplares = new ArrayList<Exemplar>();
     }
 
     public static CtrlExemplar getInstance() {
@@ -60,10 +60,10 @@ public final class CtrlExemplar { // TODO: Transformar em Singleton
     }
 
     public static HashSet<Exemplar> converterExemplaresEmSet() {
-        CtrlExemplar cExemplar = CtrlExemplar.getInstance();
-        
-        HashSet<Exemplar> set = new HashSet<Exemplar>(exemplares);
+        if (exemplares == null) {
+            throw new IllegalStateException("Não há nenhum exemplar cadastrado");
+        }
 
-        return set;
+        return new HashSet<>(exemplares);
     }
 }

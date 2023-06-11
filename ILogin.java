@@ -8,7 +8,16 @@ public class ILogin {
     private static String cpf;
     private static String senha;
 
-    private static boolean validarCpf() {
+    private static boolean validarCpf() { // TODO: Lançar exceções
+        int size = cpf.length();
+    
+        if(size != 11) return false;
+
+        char cpfCharacters[] = cpf.toCharArray();
+
+        for(int i = 0; i < size; i++)
+            if(!Character.isDigit(cpfCharacters[i])) return false; // Tem algo que não é letra
+
         return true;
     }
 
@@ -55,6 +64,7 @@ public class ILogin {
                     Usuario usuario = CtrlUsuarios.getInstance().validarUsuario(cpf, senha);
 
                     if(usuario != null) { // Usuário Válido
+                        System.out.println("Bem vindo, " + usuario.getNome() + "\n");
                         usuario.executarInterface();
                     }
 

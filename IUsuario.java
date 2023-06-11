@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class IUsuario {
     private final static int PESQUISAR = 1;
-    private final static int SAIR = 8;
+    private final static int SAIR = 0;
 
     public static void interfaceUsuario() {
         Scanner input = new Scanner(System.in);

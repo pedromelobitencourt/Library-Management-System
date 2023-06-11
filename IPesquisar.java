@@ -12,7 +12,20 @@ public class IPesquisar {
     private static final int CANCELAR = 0;
 
     private static void pesquisar(HashSet<Integer> options) {
-        HashSet<Exemplar> exemplares = CtrlExemplar.getInstance().converterExemplaresEmSet();
+        HashSet<Exemplar> exemplares;
+
+        try {
+            exemplares = CtrlExemplar.converterExemplaresEmSet();
+        }
+        catch (IllegalStateException e) { // Não há exemplares
+            String erro = e.toString();
+            erro = erro.replace("java.lang.IllegalStateException: ", "");
+
+            System.out.println(erro);
+            System.out.println("Peça a um admnistrador para verificar a situação\n");
+            return;
+        }
+        
         Scanner input = new Scanner(System.in);
 
         for(Integer option : options) {
