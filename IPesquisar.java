@@ -1,3 +1,5 @@
+import java.util.HashSet;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class IPesquisar {
@@ -7,10 +9,102 @@ public class IPesquisar {
     private static final int ISBN = 3;
     private static final int IDIOMA = 4;
     private static final int DISPONIVEL = 5;
+    private static final int CANCELAR = 0;
+
+    private static void pesquisar(HashSet<Integer> options) {
+        
+    }
+
+    private static boolean querMaisFiltro() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Digite 'S' (sem as aspas simples) se quer aplicar mais filtros");
+        System.out.println("Digite qualquer outra coisa caso contrário");
+        System.out.print("Sua opção: ");
+
+        String opt;
+
+        opt = input.nextLine();
+
+        System.out.println();
+
+        if(opt.equals("S")) return true;
+        return false;
+    }
 
     public static void executar() {
         Scanner input = new Scanner(System.in);
 
-        
+        HashSet<Integer> options = new HashSet<Integer>();
+        boolean sair = false;
+
+        while(!sair) { // Menu
+            int opt; // Opção do usuário
+
+            System.out.println("Digite " + NOME_LIVRO + " para pesquisar um exemplar pelo nome do livro");
+            System.out.println("Digite " + NOME_AUTOR + " para pesquisar um exemplar pelo nome do autor do livro");
+            System.out.println("Digite " + ISBN + " para pesquisar um exemplar pelo ISBN");
+            System.out.println("Digite " + IDIOMA + " para pesquisar um exemplar pelo idioma do exemplar");
+            System.out.println("Digite " + DISPONIVEL + " para pesquisar um exemplar por sua disponibilidade");
+            System.out.println("Digite " + CANCELAR + " para cancelar a pesquisa");
+            System.out.print("Sua opção: ");
+
+            try{
+                opt = input.nextInt();
+            }
+            catch (InputMismatchException e){
+                System.out.println("Digite um número");
+                continue;
+            }
+
+            System.out.println();
+
+            switch(opt) {
+                case NOME_LIVRO:
+                    options.add(NOME_LIVRO);
+
+                    if(!querMaisFiltro()) sair = true;
+
+                    break;
+
+                case NOME_AUTOR:
+                    options.add(NOME_AUTOR);
+
+                    if(!querMaisFiltro()) sair = true;
+
+                    break;
+
+                case ISBN:
+                    options.add(ISBN);
+
+                    if(!querMaisFiltro()) sair = true;
+
+                    break;
+
+                case IDIOMA:
+                    options.add(IDIOMA);
+
+                    if(!querMaisFiltro()) sair = true;
+
+                    break;
+
+                case DISPONIVEL:
+                    options.add(DISPONIVEL);
+
+                    if(!querMaisFiltro()) sair = true;
+
+                    break;
+
+                case CANCELAR:
+                    sair = true;
+                    break;
+
+                default:
+                    System.out.println("Digite uma opção válida");
+                    break;
+            }
+        }
+
+        pesquisar(options);
     }
 }
