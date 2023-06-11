@@ -16,7 +16,7 @@ public final class CtrlUsuarios { // Singleton tem final
         long cep = 98989777;
 
         Endereco endereco = new Endereco(rua, numero, cep);
-        Usuario usuario = new Usuario(nome, cpf, senha, endereco);
+        Usuario usuario = new Usuario(nome, cpf, senha, endereco); // TODO: Trocar para Adm
 
         usuarios.add(usuario);
     }

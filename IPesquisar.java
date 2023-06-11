@@ -12,7 +12,7 @@ public class IPesquisar {
     private static final int CANCELAR = 0;
 
     private static void pesquisar(HashSet<Integer> options) {
-        HashSet<Exemplar> exemplares = CtrlExemplar.converterExemplaresEmSet();
+        HashSet<Exemplar> exemplares = CtrlExemplar.getInstance().converterExemplaresEmSet();
         Scanner input = new Scanner(System.in);
 
         for(Integer option : options) {

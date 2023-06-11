@@ -29,7 +29,7 @@ public class IUsuario {
 
             switch(opt) {
                 case PESQUISAR:
-                    ;
+                    IPesquisar.executar();
                     break;
 
                 case SAIR:
