@@ -53,6 +53,6 @@ public class Usuario {
     }
 
     public void executarInterface() {
-        IUsuario.interfaceUsuario();
+        IUsuario.executarInterface();
     }
 }

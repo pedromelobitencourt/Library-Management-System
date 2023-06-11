@@ -1,45 +1,28 @@
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class IUsuario {
-    private final static int PESQUISAR = 1;
-    private final static int SAIR = 0;
+    protected final static int PESQUISAR = 1;
+    protected final static int SAIR = 0;
 
-    public static void interfaceUsuario() {
-        Scanner input = new Scanner(System.in);
-        
-        boolean sair = false;
+    protected final static int MENOR_ID_DISPONIVEL = 2; // Se adicionar opção na interface do usuário, aumentar
 
-        while(!sair) {
-            int opt;
+    protected static ArrayList<Integer> optionsId;
+    protected static ArrayList<String> optionsDesc;
 
-            System.out.println("Digite " + PESQUISAR + " para pesquisar um exemplar");
-            System.out.println("Digite " + SAIR + " para sair de sua conta");
-            System.out.print("Sua opção: ");
+    protected static void addOptions() {
+        optionsId = new ArrayList<Integer>();
+        optionsDesc = new ArrayList<String>();
 
-            try{
-                opt = input.nextInt();
-            }
-            catch (InputMismatchException e){
-                System.out.println("Digite um número");
-                continue;
-            }
+        optionsId.add(PESQUISAR);
+        optionsDesc.add("Digite " + PESQUISAR + " para pesquisar um exemplar");
 
-            System.out.println();
+        optionsId.add(SAIR);
+        optionsDesc.add("Digite " + SAIR + " para sair de sua conta");
+    }
 
-            switch(opt) {
-                case PESQUISAR:
-                    IPesquisar.executar();
-                    break;
+    public static void executarInterface() {
+        addOptions();
 
-                case SAIR:
-                    sair = true;
-                    break;
-
-                default:
-                    System.out.println("Digite uma opção válida");
-                    break;
-            }
-        }
+        IMenu.exibirMenu(optionsDesc, optionsId);
     }
 }
