@@ -11,14 +11,14 @@ public final class ICadastroUsuario {
     private static long cep;
 
     public static void executarInterface() {
-        cpfUsuario();
-        nomeUsuario();
-        senhaUsuario();
+        cadastroCpfUsuario();
+        cadastroNomeUsuario();
+        cadastroSenhaUsuario();
 
-        enderecoUsuario();
+        cadastroEnderecoUsuario();
     }
 
-    private static void nomeUsuario() {
+    private static void cadastroNomeUsuario() {
         String nomeUsuario;
 
         Scanner input = new Scanner(System.in);
@@ -35,7 +35,7 @@ public final class ICadastroUsuario {
         }
     }
 
-    private static void cpfUsuario() {
+    private static void cadastroCpfUsuario() {
         String cpfUsuario;
 
         Scanner input = new Scanner(System.in);
@@ -52,7 +52,7 @@ public final class ICadastroUsuario {
         }
     }
 
-    private static void senhaUsuario() {
+    private static void cadastroSenhaUsuario() {
         String senhaUsuario;
 
         Scanner input = new Scanner(System.in);
@@ -69,7 +69,7 @@ public final class ICadastroUsuario {
         }
     }
 
-    private static void enderecoUsuario() {
+    private static void cadastroEnderecoUsuario() {
         ruaUsuario();
         numeroEnderecoUsuario();
         cepUsuario();
