@@ -32,7 +32,7 @@ public class IMenu {
 
             System.out.println();
 
-            if(opt < opcoesDesc.size()) {
+            if(opt < opcoesDesc.size()) { // Digitou uma opção válida
                 executarOpcaoAdicional(opt);
             } 
             else {
@@ -42,15 +42,37 @@ public class IMenu {
     }
 
     private static void executarOpcaoAdicional(int opt) {
-        // Lógica para executar a opção adicional
-        switch (opt) {
-            case 1:
-                IPesquisar.executar();
-                break;
-            case 0:
-                sair = true;
-                break;
+        // Funções de um usuário comum
+        final int PESQUISAR = IUsuario.getConstPesquisar();
+        final int SAIR = IUsuario.getConstSair();
 
+        // Funções do Adm
+        final int CADASTRAR_USUARIO = IAdm.getConstCadastrarUsuario();
+        final int PROMOVER_ADM = IAdm.getConstPromoverAdm();
+        final int REMOVER_USUARIO = IAdm.getConstRemoverUsuario();
+        final int CADASTRAR_LIVRO = IAdm.getConstCadastrarLivro();
+        final int GERENCIAR_EMPRESTIMO = IAdm.getConstGerenciarEmprestimo();
+
+        if (opt == PESQUISAR) {
+            IPesquisar.executar();
+        }
+        else if (opt == SAIR) {
+            sair = true;
+        }
+        else if (opt == CADASTRAR_USUARIO) {
+            // Corpo vazio
+        }
+        else if (opt == PROMOVER_ADM) {
+            // Corpo vazio
+        }
+        else if (opt == REMOVER_USUARIO) {
+            // Corpo vazio
+        }
+        else if (opt == CADASTRAR_LIVRO) {
+            // Corpo vazio
+        }
+        else if (opt == GERENCIAR_EMPRESTIMO) {
+            // Corpo vazio
         }
     }
 }

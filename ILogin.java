@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class ILogin {
     private static final int LOGAR = 1;
-    private static final int SAIR = 2; // Sair do sistema
+    private static final int SAIR = 0; // Sair do sistema
 
     private static String cpf;
     private static String senha;

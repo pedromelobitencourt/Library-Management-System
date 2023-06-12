@@ -25,4 +25,12 @@ public class IUsuario {
 
         IMenu.exibirMenu(optionsDesc, optionsId);
     }
+
+    public static int getConstPesquisar() {
+        return PESQUISAR;
+}
+
+    public static int getConstSair() {
+        return SAIR;
+    }
 }
