@@ -4,7 +4,7 @@ import java.util.HashMap;
 public final class CtrlLivro {
     private static CtrlLivro ctrlLivro;
 
-    private HashMap<String, ArrayList<Livro> > livros; // Pode ter mais de um livro com o mesmo nome
+    private static HashMap<String, ArrayList<Livro> > livros; // Pode ter mais de um livro com o mesmo nome
     // private HashMap<String, Autor> autores; // Não pode ter mais de um autor com o mesmo nome
     //private HashMap<String, Editora> editoras; // Não pode ter mais de uma editora com o mesmo nome
 
@@ -13,7 +13,7 @@ public final class CtrlLivro {
         livros = new HashMap<String, ArrayList<Livro> >();    
     }
 
-    public CtrlLivro getInstance() {
+    public static CtrlLivro getInstance() {
         if(ctrlLivro == null) ctrlLivro = new CtrlLivro();
 
         return ctrlLivro;

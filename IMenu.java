@@ -69,7 +69,7 @@ public class IMenu {
             // Corpo vazio
         }
         else if (opt == CADASTRAR_LIVRO) {
-            // Corpo vazio
+            ICadastroExemplar.executarInterface();
         }
         else if (opt == GERENCIAR_EMPRESTIMO) {
             // Corpo vazio

@@ -22,24 +22,47 @@ public class ICadastroExemplar {
         // TODO: Verificar se já há tal livro, autor, editora no banco de dados
         
         cadastroNomeLivro();
+        System.out.println();
         cadastroIsbn();
+        System.out.println();
         cadastroIdioma();
+        System.out.println();
 
         cadastroAutor();
 
         cadastroEditora();
+
+        Autor autor = new Autor(nomeAutor, nacionalidade);
+
+        Endereco endereco = new Endereco(nomeRuaEditora, numeroEnderecoEditora, cepEnderecoEditora);
+
+        Editora editora = new Editora(nomeEditora, endereco);
+
+        Livro livro = new Livro(nomeLivro, isbn, idioma, autor, editora);
+
+        CtrlLivro ctrlLivro = CtrlLivro.getInstance();
+        ctrlLivro.cadastrarLivro(livro);
+
+        CtrlExemplar ctrlExemplar = CtrlExemplar.getInstance();
+        ctrlExemplar.cadastrarExemplar(livro);
     }
 
     private static void cadastroAutor() {
         cadastroNomeAutor();
+        System.out.println();
         cadastroNacionalidade();
+        System.out.println();
     }
 
     private static void cadastroEditora() {
         cadastroNomeEditora();
+        System.out.println();
         cadastroNomeRuaEditora();
+        System.out.println();
         cadastroNumeroEnderecoEditora();
+        System.out.println();
         cadastroCepEditora();
+        System.out.println();
     }
 
     private static void cadastroNomeLivro() {

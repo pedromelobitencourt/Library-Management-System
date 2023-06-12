@@ -71,7 +71,10 @@ public class IPesquisar {
                     exemplares.retainAll(optionSet);
                     break;
             }
+            System.out.println();
         }
+
+        ExemplaresViewer.visualizarExemplares(exemplares);
     }
 
     private static boolean querMaisFiltro() {
@@ -95,7 +98,7 @@ public class IPesquisar {
         Scanner input = new Scanner(System.in);
 
         HashSet<Integer> options = new HashSet<Integer>(); // Sem repetição
-        boolean sair = false;
+        boolean sair = false, cancelar = false;
 
         while(!sair) { // Menu
             int opt; // Opção do usuário
@@ -155,7 +158,7 @@ public class IPesquisar {
                     break;
 
                 case CANCELAR:
-                    sair = true;
+                    cancelar = sair = true;
                     break;
 
                 default:
@@ -163,7 +166,6 @@ public class IPesquisar {
                     break;
             }
         }
-
-        pesquisar(options);
+        if(!cancelar) pesquisar(options);
     }
 }
