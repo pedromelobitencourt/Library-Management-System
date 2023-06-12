@@ -60,7 +60,7 @@ public class IMenu {
             sair = true;
         }
         else if (opt == CADASTRAR_USUARIO) {
-            // Corpo vazio
+            ICadastroUsuario.executarInterface();
         }
         else if (opt == PROMOVER_ADM) {
             // Corpo vazio

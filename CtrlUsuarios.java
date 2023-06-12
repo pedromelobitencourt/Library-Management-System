@@ -28,6 +28,14 @@ public final class CtrlUsuarios { // Singleton tem final
         return instancia;
     }
 
+    public void cadastrarUsuario(Usuario usuario) {
+        String cpfUsuario = usuario.getCpf();
+
+        // TODO: Verificar se tem usuário com o mesmo cpf
+
+        usuarios.add(usuario);
+    }
+
     public Usuario validarUsuario(String cpf, String senha) { // Se retornar null, não logou
         for(Usuario usuario : usuarios) {
             String cpfUsuario = usuario.getCpf();

@@ -21,7 +21,7 @@ public class IUsuario {
     }
 
     public static void executarInterface() {
-        addOptions();
+        addOptions(); // Opções de pesquisa do usuário comum
 
         IMenu.exibirMenu(optionsDesc, optionsId);
     }

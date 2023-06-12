@@ -63,7 +63,7 @@ public class IAdm extends IUsuario {
     }
 
     public static void executarInterface() {
-        addOptions();
+        addOptions(); // Opções de usuário comum + de administrador
 
         IMenu.exibirMenu(optionsDesc, optionsId);
     }
