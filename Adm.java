@@ -1,9 +1,18 @@
-public class Adm extends Usuario { // Adm ter um código seria bom para ter um Adm Principal (o único que pode promover a adm e remover adm) 
+public class Adm extends Usuario { // Adm ter um código seria bom para ter um Adm Principal (o único que pode promover a adm e remover adm)
+    private static int ID = 1;
+    
+    private final int id;
+
     public Adm(String nome, String cpf, String senha, Endereco endereco) {
         super(nome, cpf, senha, endereco);
+        this.id = ID++;
     }
 
     public void executarInterface() {
         IAdm.executarInterface();
+    }
+
+    public int getId() {
+        return this.id;
     }
 }
