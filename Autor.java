@@ -1,5 +1,3 @@
-import javax.naming.directory.InvalidAttributesException;
-
 public class Autor {
     private final String nome;
     private final String nacionalidade;

@@ -19,6 +19,7 @@ public class ICadastroExemplar {
     }
 
     public static void cadastroLivro() {
+        Scanner input = new Scanner(System.in);
         // TODO: Verificar se já há tal livro, autor, editora no banco de dados
         
         cadastroNomeLivro();

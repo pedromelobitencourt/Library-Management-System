@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class IPesquisar {
     // Maneiras de pesquisar um exemplar (Pode ter combinação entre eles)
-    private static final int NOME_LIVRO = 1;
-    private static final int NOME_AUTOR = 2;
-    private static final int ISBN = 3;
-    private static final int IDIOMA = 4;
-    private static final int DISPONIVEL = 5;
+    private static final int TODOS_EXEMPLARES = 1;
+    private static final int NOME_LIVRO = 2;
+    private static final int NOME_AUTOR = 3;
+    private static final int ISBN = 4;
+    private static final int IDIOMA = 5;
+    private static final int DISPONIVEL = 6;
     private static final int CANCELAR = 0;
 
     private static void pesquisar(HashSet<Integer> options) {
@@ -32,6 +33,8 @@ public class IPesquisar {
             HashSet<Exemplar> optionSet;
 
             switch(option) {
+                case TODOS_EXEMPLARES:
+                    break;
                 case NOME_LIVRO:
                     System.out.print("Digite o nome do livro: ");
                     String nomeLivro = input.nextLine();
@@ -103,6 +106,7 @@ public class IPesquisar {
         while(!sair) { // Menu
             int opt; // Opção do usuário
 
+            System.out.println("Digite " + TODOS_EXEMPLARES + " para ver todos os exemplares");
             System.out.println("Digite " + NOME_LIVRO + " para pesquisar um exemplar pelo nome do livro");
             System.out.println("Digite " + NOME_AUTOR + " para pesquisar um exemplar pelo nome do autor do livro");
             System.out.println("Digite " + ISBN + " para pesquisar um exemplar pelo ISBN");
@@ -122,6 +126,11 @@ public class IPesquisar {
             System.out.println();
 
             switch(opt) {
+                case TODOS_EXEMPLARES:
+                    options.add(TODOS_EXEMPLARES);
+                    sair = true;
+                    break;
+        
                 case NOME_LIVRO:
                     options.add(NOME_LIVRO);
 

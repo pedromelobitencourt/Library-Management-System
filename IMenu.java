@@ -39,6 +39,8 @@ public class IMenu {
                 System.out.println("Digite uma opção válida");
             }
         }
+
+        input.close();
     }
 
     private static void executarOpcaoAdicional(int opt) {
