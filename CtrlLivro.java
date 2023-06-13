@@ -37,23 +37,4 @@ public final class CtrlLivro {
         }
     }
 
-    // private void cadastrarAutor(Autor autor) {
-    //     String nomeAutor = autor.getNome();
-
-    //     if(!autores.containsKey(nomeAutor)) autores.put(nomeAutor, autor);
-    // }
-
-    // private void cadastrarEditora(Editora editora) {
-    //     String nomeEditora = editora.getNome();
-
-    //     if(!editoras.containsKey(nomeEditora)) editoras.put(nomeEditora, editora);
-    // }
-
-    // public Autor pesquisarAutor(String nomeAutor) {
-    //     return this.autores.get(nomeAutor);
-    // }
-
-    // public Editora pesquisarEditora(String nomeEditora) {
-    //     return this.editoras.get(nomeEditora);
-    // }
 }
