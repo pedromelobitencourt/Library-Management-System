@@ -8,7 +8,7 @@ public final class CtrlExemplar { // TODO: Transformar em Singleton
 
     // Sempre que for pesquisar por um livro, terá que pesquisar o nome
     //private HashMap<String, ArrayList<Exemplar> > exemplares; // Pesquisa pelo nome do livro : O(1)
-    private static ArrayList<Exemplar> exemplares; // O(n)
+    // private static ArrayList<Exemplar> exemplares; // O(n)
 
     private CtrlExemplar() {
         exemplares = new ArrayList<Exemplar>();

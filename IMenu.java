@@ -40,7 +40,6 @@ public class IMenu {
             }
         }
 
-        input.close();
     }
 
     private static void executarOpcaoAdicional(int opt) {

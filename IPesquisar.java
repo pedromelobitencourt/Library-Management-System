@@ -7,9 +7,9 @@ public class IPesquisar {
     private static final int TODOS_EXEMPLARES = 1;
     private static final int NOME_LIVRO = 2;
     private static final int NOME_AUTOR = 3;
-    private static final int ISBN = 4;
-    private static final int IDIOMA = 5;
-    private static final int DISPONIVEL = 6;
+    // private static final int ISBN = 4;
+    // private static final int IDIOMA = 5;
+    // private static final int DISPONIVEL = 6;
     private static final int CANCELAR = 0;
 
     private static void pesquisar(HashSet<Integer> options) {
@@ -51,28 +51,28 @@ public class IPesquisar {
                     exemplares.retainAll(optionSet);
                     break;
 
-                case ISBN:
-                    System.out.print("Digite o ISBN do livro: ");
-                    String isbn = input.nextLine(); // TODO: long
+                // case ISBN:
+                //     System.out.print("Digite o ISBN do livro: ");
+                //     String isbn = input.nextLine(); // TODO: long
 
-                    optionSet = CtrlExemplar.pesquisarExemplarNome(isbn);
-                    exemplares.retainAll(optionSet);
-                    break;
+                //     optionSet = CtrlExemplar.pesquisarExemplarNome(isbn);
+                //     exemplares.retainAll(optionSet);
+                //     break;
                     
-                case IDIOMA:
-                    System.out.print("Digite o idioma do livro: ");
-                    String idioma = input.nextLine();
+                // case IDIOMA:
+                //     System.out.print("Digite o idioma do livro: ");
+                //     String idioma = input.nextLine();
 
-                    optionSet = CtrlExemplar.pesquisarExemplarNome("nomeLivro");
-                    exemplares.retainAll(optionSet);
-                    break;
+                //     optionSet = CtrlExemplar.pesquisarExemplarNome("nomeLivro");
+                //     exemplares.retainAll(optionSet);
+                //     break;
                 
-                case DISPONIVEL:
-                    boolean disponibilidade = true;
+                // case DISPONIVEL:
+                //     boolean disponibilidade = true;
 
-                    optionSet = CtrlExemplar.pesquisarExemplarNome("nomeLivro");
-                    exemplares.retainAll(optionSet);
-                    break;
+                //     optionSet = CtrlExemplar.pesquisarExemplarNome("nomeLivro");
+                //     exemplares.retainAll(optionSet);
+                //     break;
             }
             System.out.println();
         }
@@ -109,10 +109,10 @@ public class IPesquisar {
             System.out.println("Digite " + TODOS_EXEMPLARES + " para ver todos os exemplares");
             System.out.println("Digite " + NOME_LIVRO + " para pesquisar um exemplar pelo nome do livro");
             System.out.println("Digite " + NOME_AUTOR + " para pesquisar um exemplar pelo nome do autor do livro");
-            System.out.println("Digite " + ISBN + " para pesquisar um exemplar pelo ISBN");
-            System.out.println("Digite " + IDIOMA + " para pesquisar um exemplar pelo idioma do exemplar");
-            System.out.println("Digite " + DISPONIVEL + " para pesquisar um exemplar por sua disponibilidade");
-            System.out.println("Digite " + CANCELAR + " para cancelar a pesquisa");
+            // System.out.println("Digite " + ISBN + " para pesquisar um exemplar pelo ISBN");
+            // System.out.println("Digite " + IDIOMA + " para pesquisar um exemplar pelo idioma do exemplar");
+            // System.out.println("Digite " + DISPONIVEL + " para pesquisar um exemplar por sua disponibilidade");
+            // System.out.println("Digite " + CANCELAR + " para cancelar a pesquisa");
             System.out.print("Sua opção: ");
 
             try{
@@ -145,26 +145,26 @@ public class IPesquisar {
 
                     break;
 
-                case ISBN:
-                    options.add(ISBN);
+                // case ISBN:
+                //     options.add(ISBN);
 
-                    if(!querMaisFiltro()) sair = true;
+                //     if(!querMaisFiltro()) sair = true;
 
-                    break;
+                //     break;
 
-                case IDIOMA:
-                    options.add(IDIOMA);
+                // case IDIOMA:
+                //     options.add(IDIOMA);
 
-                    if(!querMaisFiltro()) sair = true;
+                //     if(!querMaisFiltro()) sair = true;
 
-                    break;
+                //     break;
 
-                case DISPONIVEL:
-                    options.add(DISPONIVEL);
+                // case DISPONIVEL:
+                //     options.add(DISPONIVEL);
 
-                    if(!querMaisFiltro()) sair = true;
+                //     if(!querMaisFiltro()) sair = true;
 
-                    break;
+                //     break;
 
                 case CANCELAR:
                     cancelar = sair = true;

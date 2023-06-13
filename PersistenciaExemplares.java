@@ -9,6 +9,6 @@ public final class PersistenciaExemplares {
     }
 
     public static PersistenciaExemplares getInstance() {
-
+        
     }
 }
