@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-// import java.util.HashMap;
 import java.util.HashSet;
 
 public final class CtrlExemplar { // TODO: Transformar em Singleton
@@ -11,7 +9,7 @@ public final class CtrlExemplar { // TODO: Transformar em Singleton
     // private static ArrayList<Exemplar> exemplares; // O(n)
 
     private CtrlExemplar() {
-        exemplares = new ArrayList<Exemplar>();
+        ;
     }
 
     public static CtrlExemplar getInstance() {
@@ -25,45 +23,33 @@ public final class CtrlExemplar { // TODO: Transformar em Singleton
     public void cadastrarExemplar(Livro livro) {
         Exemplar exemplarNovo = new Exemplar(CODIGO++, livro);
 
-        exemplares.add(exemplarNovo);
+        PersistenciaExemplares persistenciaExemplares = PersistenciaExemplares.getInstance(); 
+
+        persistenciaExemplares.adicionarExemplar(exemplarNovo);
     }
 
     public static HashSet<Exemplar> pesquisarExemplarNome(String nomeLivro) {
-        HashSet<Exemplar> exemplaresProcurados = new HashSet<Exemplar>();
+        // TODO: Verificações ...
 
-        for(Exemplar exemplar : exemplares) {
-            if(exemplar.getLivro().getNome().equals(nomeLivro))
-                exemplaresProcurados.add(exemplar);
-        }
-        
-        return exemplaresProcurados;
+        PersistenciaExemplares persistenciaExemplares = PersistenciaExemplares.getInstance(); 
+
+        return persistenciaExemplares.pesquisarExemplar(nomeLivro);
     }
 
     public void removerExemplar(Exemplar exemplar) {
-        boolean removido = false;
+        // TODO: Verificações
 
-        int size = exemplares.size();
-
-        for(int i = 0; i < size; i++) {
-            Exemplar value = exemplares.get(i);
-
-            if(value.getCodigo() == exemplar.getCodigo()) {
-                exemplares.remove(i);
-                removido = true;
-                break;
-            }
-        }
-
-        if(removido) System.out.println("O exemplar foi removido com sucesso");
-        else System.out.println("Não foi encontrado o exemplar:\n" + exemplar.toString());
-
+        PersistenciaExemplares persistenciaExemplares = PersistenciaExemplares.getInstance(); 
+        persistenciaExemplares.removerExemplar(exemplar);
     }
 
     public static HashSet<Exemplar> converterExemplaresEmSet() {
-        if (exemplares == null) {
+        PersistenciaExemplares persistenciaExemplares = PersistenciaExemplares.getInstance(); 
+
+        if (persistenciaExemplares.getExemplares().size() == 0) {
             throw new IllegalStateException("Não há nenhum exemplar cadastrado");
         }
 
-        return new HashSet<>(exemplares);
+        return new HashSet<>(persistenciaExemplares.getExemplares());
     }
 }

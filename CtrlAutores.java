@@ -1,12 +1,11 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public final class CtrlAutores {
     private static CtrlAutores ctrlAutores;
-    private static HashMap<String, Autor> autores; // Não pode ter mais de um autor com o mesmo nome
+    // private static HashMap<String, Autor> autores; // Não pode ter mais de um autor com o mesmo nome
 
     private CtrlAutores() {
-        autores = new HashMap<String, Autor>();
+        ;
     }
 
     public CtrlAutores getInstance() {
@@ -16,28 +15,16 @@ public final class CtrlAutores {
     }
 
     public static void cadastrarAutor(Autor autor) {
-        String nomeAutor = autor.getNome();
+        PersistenciaAutores persistenciaAutores = PersistenciaAutores.getInstance();
 
-        if(!autores.containsKey(nomeAutor)) autores.put(nomeAutor, autor);
+        persistenciaAutores.adicionarAutor(autor);
     }
 
     public static ArrayList<Autor> pesquisarAutorPeloNome(String nomeAutor) { // Padronizar o retorno (ArrayList)
-        ArrayList<Autor> autor = new ArrayList<Autor>();
-        autor.add(autores.get(nomeAutor));
+        // TODO: Fazer verificações
 
-        return autor;
-    }
+        PersistenciaAutores persistenciaAutores = PersistenciaAutores.getInstance();
 
-    public static ArrayList<Autor> pesquisarAutorPelaNacionalidade(String nacionalidade) {
-        ArrayList<Autor> autoresNacionalidade = new ArrayList<Autor>();
-
-        for(String autorNome : autores.keySet()) {
-            Autor autor = autores.get(autorNome);
-
-            if(autor.getNacionalidade().equals(nacionalidade))
-                autoresNacionalidade.add(autor);
-        }
-
-        return autoresNacionalidade;
+        return persistenciaAutores.pesquisarAutorPeloNome(nomeAutor);
     }
 }
