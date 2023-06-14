@@ -16,7 +16,7 @@ public class PersistenciaLivro {
         return persistenciaLivro;
     }
 
-    public void adicionarLivro(Livro livro) {
+    public void cadastrarLivro(Livro livro) {
         String nomeLivro = livro.getNome();
 
         if(!livros.containsKey(nomeLivro)) {

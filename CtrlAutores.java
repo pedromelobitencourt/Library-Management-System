@@ -17,7 +17,7 @@ public final class CtrlAutores {
     public static void cadastrarAutor(Autor autor) {
         PersistenciaAutores persistenciaAutores = PersistenciaAutores.getInstance();
 
-        persistenciaAutores.adicionarAutor(autor);
+        persistenciaAutores.cadastrarAutor(autor);
     }
 
     public static ArrayList<Autor> pesquisarAutorPeloNome(String nomeAutor) { // Padronizar o retorno (ArrayList)

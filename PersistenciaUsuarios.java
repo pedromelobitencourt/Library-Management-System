@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public final class PersostencialUsuarios { 
+public final class PersistenciaUsuarios { 
     
 
 }

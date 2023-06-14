@@ -15,7 +15,7 @@ public final class PersistenciaExemplares {
         return persistenciaExemplares;
     }
 
-    public void adicionarExemplar(Exemplar exemplar) {
+    public void cadastrarExemplar(Exemplar exemplar) {
         exemplares.add(exemplar);
     }
 

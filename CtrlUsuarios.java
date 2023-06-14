@@ -7,8 +7,8 @@ public final class CtrlUsuarios { // Singleton tem final
     private CtrlUsuarios() {
         usuarios = new ArrayList<Usuario>();
 
-        String nome = "Pedro";
-        String cpf = "11111111111";
+        String nome = "Adm";
+        String cpf = "1";
         String senha = "senha";
 
         String rua = "rua";
@@ -16,7 +16,7 @@ public final class CtrlUsuarios { // Singleton tem final
         long cep = 98989777;
 
         Endereco endereco = new Endereco(rua, numero, cep);
-        Adm usuario = new Adm(nome, cpf, senha, endereco); // TODO: Trocar para Adm
+        Adm usuario = new Adm(nome, cpf, senha, endereco);
 
         usuarios.add(usuario);
     }

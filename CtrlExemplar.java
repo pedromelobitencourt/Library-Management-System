@@ -1,23 +1,19 @@
 import java.util.HashSet;
 
-public final class CtrlExemplar { // TODO: Transformar em Singleton
-    private static CtrlExemplar instancia;
+public final class CtrlExemplar { 
+    private static CtrlExemplar ctrlExemplar;
     private static int CODIGO = 1;
-
-    // Sempre que for pesquisar por um livro, terá que pesquisar o nome
-    //private HashMap<String, ArrayList<Exemplar> > exemplares; // Pesquisa pelo nome do livro : O(1)
-    // private static ArrayList<Exemplar> exemplares; // O(n)
 
     private CtrlExemplar() {
         ;
     }
 
     public static CtrlExemplar getInstance() {
-        if(instancia == null) {
-            instancia = new CtrlExemplar();
+        if(ctrlExemplar == null) {
+            ctrlExemplar = new CtrlExemplar();
         }
 
-        return instancia;
+        return ctrlExemplar;
     }
 
     public void cadastrarExemplar(Livro livro) {
@@ -25,7 +21,7 @@ public final class CtrlExemplar { // TODO: Transformar em Singleton
 
         PersistenciaExemplares persistenciaExemplares = PersistenciaExemplares.getInstance(); 
 
-        persistenciaExemplares.adicionarExemplar(exemplarNovo);
+        persistenciaExemplares.cadastrarExemplar(exemplarNovo);
     }
 
     public static HashSet<Exemplar> pesquisarExemplarNome(String nomeLivro) {

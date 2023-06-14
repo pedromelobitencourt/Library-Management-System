@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 
 public final class PersistenciaAutores {
     private static PersistenciaAutores persistenciaAutores;
@@ -16,12 +15,10 @@ public final class PersistenciaAutores {
         return persistenciaAutores;
     }
 
-    public void adicionarAutor(Autor autor) {
+    public void cadastrarAutor(Autor autor) {
         String nomeAutor = autor.getNome();
 
         if(!autores.containsKey(nomeAutor)) autores.put(nomeAutor, autor);
-
-        autores.put(autor.getNome(), autor);
     }
 
     public void removerAutor(Autor autor) {

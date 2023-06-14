@@ -11,6 +11,8 @@ public class ILogin {
     private static boolean validarCpf() { // TODO: Lançar exceções
         int size = cpf.length();
     
+        // Login do Adm
+        if(size == 1 && cpf.equals("1")) return true;
         if(size != 11) return false;
 
         char cpfCharacters[] = cpf.toCharArray();
