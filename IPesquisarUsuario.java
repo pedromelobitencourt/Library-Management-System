@@ -27,6 +27,23 @@ public class IPesquisarUsuario {
             }
 
             System.out.println();
+
+            switch(opt) {
+                case CPF:
+                    ;
+                    break;
+                
+                case NOME:
+                    ;
+                    break;
+                
+                case CANCELAR:
+                    ;
+                    break;
+                
+                default:
+                    ;
+            }
         }
     }
 }

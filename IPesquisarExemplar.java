@@ -2,7 +2,7 @@ import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class IPesquisar { // Pesquisar Exemplar
+public class IPesquisarExemplar { // Pesquisar Exemplar
     // Maneiras de pesquisar um exemplar (Pode ter combinação entre eles)
     private static final int TODOS_EXEMPLARES = 1;
     private static final int NOME_LIVRO = 2;

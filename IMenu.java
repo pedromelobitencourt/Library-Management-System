@@ -55,7 +55,7 @@ public class IMenu {
         final int GERENCIAR_EMPRESTIMO = IAdm.getConstGerenciarEmprestimo();
 
         if (opt == PESQUISAR) {
-            IPesquisar.executar();
+            IPesquisarExemplar.executar();
         }
         else if (opt == SAIR) {
             sair = true;
