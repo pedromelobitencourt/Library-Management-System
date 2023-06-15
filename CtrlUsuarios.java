@@ -11,7 +11,7 @@ public final class CtrlUsuarios { // Singleton tem final
         String cpf = "1";
         String senha = "senha";
 
-        String rua = "rua";
+        String rua = "Rua da biblioteca";
         int numero = 9;
         long cep = 98989777;
 
