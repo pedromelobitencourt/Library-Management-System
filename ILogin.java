@@ -28,6 +28,7 @@ public class ILogin {
 
         System.out.print("Digite seu cpf (XXXXXXXXXXX): ");
         cpf = input.next();
+        validarCpf();
 
         input.nextLine(); // Limpar o buffer
 
@@ -35,6 +36,7 @@ public class ILogin {
         senha = input.nextLine(); // Pode ter espacos
 
         System.out.println();
+        input.close();
     }
 
     public static void executar() {
@@ -81,6 +83,7 @@ public class ILogin {
                     System.out.println("Digite uma opção válida\n");
                     break;
             }
+            input.close();
         }
     }
 }
