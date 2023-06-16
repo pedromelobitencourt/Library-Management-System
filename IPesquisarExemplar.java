@@ -76,7 +76,7 @@ public class IPesquisarExemplar { // Pesquisar Exemplar
             }
             System.out.println();
         }
-
+        input.close();
         ExemplaresViewer.visualizarExemplares(exemplares);
     }
 
@@ -92,7 +92,7 @@ public class IPesquisarExemplar { // Pesquisar Exemplar
         opt = input.nextLine();
 
         System.out.println();
-
+        input.close();
         if(opt.equals("S")) return true;
         return false;
     }
@@ -173,7 +173,7 @@ public class IPesquisarExemplar { // Pesquisar Exemplar
                 default:
                     System.out.println("Digite uma opção válida");
                     break;
-            }
+            } input.close();
         }
         if(!cancelar) pesquisar(options);
     }
