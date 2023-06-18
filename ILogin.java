@@ -36,7 +36,6 @@ public class ILogin {
         senha = input.nextLine(); // Pode ter espacos
 
         System.out.println();
-        input.close();
     }
 
     public static void executar() {
@@ -83,7 +82,6 @@ public class ILogin {
                     System.out.println("Digite uma opção válida\n");
                     break;
             }
-            input.close();
         }
     }
 }

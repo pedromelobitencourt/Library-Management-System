@@ -24,7 +24,8 @@ public class IRemoverUsuario {
                 default:
                     String cpf = opt;
 
-                    // TODO: Remover o usuário
+                    CtrlUsuarios ctrlUsuarios = CtrlUsuarios.getInstance();
+                    ctrlUsuarios.removerUsuario(cpf);
 
                     sair = true;
                     break;

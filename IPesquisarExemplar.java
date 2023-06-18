@@ -173,7 +173,7 @@ public class IPesquisarExemplar { // Pesquisar Exemplar
                 default:
                     System.out.println("Digite uma opção válida");
                     break;
-            } input.close();
+            }
         }
         if(!cancelar) pesquisar(options);
     }

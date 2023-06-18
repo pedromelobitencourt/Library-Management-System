@@ -1,24 +1,8 @@
-import java.util.ArrayList;
-
 public final class CtrlUsuarios { // Singleton tem final
     private static CtrlUsuarios instancia;
-    private ArrayList<Usuario> usuarios;
 
     private CtrlUsuarios() {
-        usuarios = new ArrayList<Usuario>();
-
-        String nome = "Adm";
-        String cpf = "1";
-        String senha = "senha";
-
-        String rua = "Rua da biblioteca";
-        int numero = 9;
-        long cep = 98989777;
-
-        Endereco endereco = new Endereco(rua, numero, cep);
-        Adm usuario = new Adm(nome, cpf, senha, endereco);
-
-        usuarios.add(usuario);
+        ;
     }
 
     public static CtrlUsuarios getInstance() { // Apenas terá uma instância em todo o programa : Singleton
@@ -29,45 +13,20 @@ public final class CtrlUsuarios { // Singleton tem final
     }
 
     public void cadastrarUsuario(Usuario usuario) {
-        String cpfUsuario = usuario.getCpf();
+        PersistenciaUsuarios persistenciaUsuarios = PersistenciaUsuarios.getInstance();
 
-        // TODO: Verificar se tem usuário com o mesmo cpf
-
-        usuarios.add(usuario);
+        persistenciaUsuarios.cadastrarUsuario(usuario);
     }
 
     public Usuario validarUsuario(String cpf, String senha) { // Se retornar null, não logou
-        for(Usuario usuario : usuarios) {
-            String cpfUsuario = usuario.getCpf();
-            String senhaUsuario = usuario.getSenha();
+        PersistenciaUsuarios persistenciaUsuarios = PersistenciaUsuarios.getInstance();
 
-            if(cpfUsuario.equals(cpf)) {
-                if(senhaUsuario.equals(senha)) {
-                    System.out.println("Logado com sucesso");
-                    return usuario;
-                }
-                else {
-                    System.out.println("Senha incorreta");
-                    return null;
-                }
-            }
-        }
+        return persistenciaUsuarios.validarUsuario(cpf, senha);
+    }
 
-        System.out.println("Não há esse usuário\n");
-        return null;
+    public void removerUsuario(String cpf) {
+        PersistenciaUsuarios persistenciaUsuarios = PersistenciaUsuarios.getInstance();
 
-        // if (usuarios.containsKey(cpf)) {
-        //     Usuario usuario = usuarios.get(cpf);
-
-        //     if (usuario.getSenha().equals(senha)) {
-        //         System.out.println("Logado com sucesso\n");
-        //         return usuario;
-        //     } else {
-        //         System.out.println("Senha incorreta\n");
-        //         return null;
-        //     }
-        // }
-
-        
+        persistenciaUsuarios.removerUsuario(cpf);
     }
 }

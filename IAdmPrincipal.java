@@ -1,11 +1,17 @@
-public class IAdm extends IUsuario {
+public class IAdmPrincipal extends IUsuario {
     private static int CADASTRAR_USUARIO;
+    private static int PROMOVER_ADM;
     private static int REMOVER_USUARIO;
+    private static int REMOVER_ADM;
     private static int CADASTRAR_LIVRO;
     private static int GERENCIAR_EMPRESTIMO;
 
     public static int getConstCadastrarUsuario() {
         return CADASTRAR_USUARIO;
+    }
+
+    public static int getConstPromoverAdm() {
+        return PROMOVER_ADM;
     }
 
     public static int getConstRemoverUsuario() {
@@ -20,6 +26,10 @@ public class IAdm extends IUsuario {
         return GERENCIAR_EMPRESTIMO;
     }
 
+    public static int getConstRemoverAdm() {
+        return REMOVER_ADM;
+    }
+
     protected static void addOptions() {
         IUsuario.addOptions();
 
@@ -29,6 +39,18 @@ public class IAdm extends IUsuario {
         final String DESC_CADASTRAR_USUARIO = "Digite " + CADASTRAR_USUARIO + " para cadastrar um usuário";
         optionsId.add(CADASTRAR_USUARIO);
         optionsDesc.add(DESC_CADASTRAR_USUARIO);
+
+
+        PROMOVER_ADM = id++;
+        final String DESC_PROMOVER_ADM = "Digite " + PROMOVER_ADM + " para promover um usuário a administrador";
+        optionsId.add(PROMOVER_ADM);
+        optionsDesc.add(DESC_PROMOVER_ADM);
+
+
+        REMOVER_ADM = id++;
+        final String DESC_REMOVER_ADM = "Digite " + REMOVER_ADM + " para remover o cargo de administrador de um usuário";
+        optionsId.add(REMOVER_ADM);
+        optionsDesc.add(DESC_REMOVER_ADM);
 
 
         REMOVER_USUARIO = id++;

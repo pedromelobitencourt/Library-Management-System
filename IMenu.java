@@ -49,10 +49,13 @@ public class IMenu {
 
         // Funções do Adm
         final int CADASTRAR_USUARIO = IAdm.getConstCadastrarUsuario();
-        final int PROMOVER_ADM = IAdm.getConstPromoverAdm();
         final int REMOVER_USUARIO = IAdm.getConstRemoverUsuario();
         final int CADASTRAR_LIVRO = IAdm.getConstCadastrarLivro();
         final int GERENCIAR_EMPRESTIMO = IAdm.getConstGerenciarEmprestimo();
+
+        // Funções do Adm Principal (ID = 1)
+        final int PROMOVER_ADM = IAdmPrincipal.getConstPromoverAdm();
+        final int REMOVER_ADM = IAdmPrincipal.getConstRemoverAdm();
 
         if (opt == PESQUISAR) {
             IPesquisarExemplar.executar();

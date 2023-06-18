@@ -9,7 +9,10 @@ public class Adm extends Usuario { // Adm ter um código seria bom para ter um A
     }
 
     public void executarInterface() {
-        IAdm.executarInterface();
+        if(this.id == 1)
+            IAdmPrincipal.executarInterface();
+        else
+            IAdm.executarInterface();
     }
 
     public int getId() {
