@@ -46,7 +46,6 @@ public class ICadastroExemplar {
 
         CtrlExemplar ctrlExemplar = CtrlExemplar.getInstance();
         ctrlExemplar.cadastrarExemplar(livro);
-        //input.close();
     }
 
     private static void cadastroAutor() {
@@ -82,7 +81,6 @@ public class ICadastroExemplar {
             nomeLivro = nome;
             break;
         }
-        input.close();
     }
 
     private static void cadastroIsbn() {
@@ -100,7 +98,6 @@ public class ICadastroExemplar {
             isbn = isbnCadastro;
             break;
         }
-        input.close();
     }
 
     private static void cadastroIdioma() {
@@ -118,7 +115,6 @@ public class ICadastroExemplar {
             idioma = idiomaCadastro;
             break;
         }
-        input.close();
     }
 
     private static void cadastroNomeAutor() {
@@ -136,7 +132,6 @@ public class ICadastroExemplar {
             nomeAutor = nomeAutorCadastro;
             break;
         }
-        input.close();
     }
 
     private static void cadastroNacionalidade() {
@@ -154,7 +149,6 @@ public class ICadastroExemplar {
             nacionalidade = nacionalidadeCadastro;
             break;
         }
-        input.close();
     }
 
     private static void cadastroNomeEditora() {
@@ -172,7 +166,6 @@ public class ICadastroExemplar {
             nomeEditora = nomeEditoraCadastro;
             break;
         }
-        input.close();
     }
 
     private static void cadastroNomeRuaEditora() {
@@ -190,7 +183,6 @@ public class ICadastroExemplar {
             nomeRuaEditora = nomeRuaEditoraCadastro;
             break;
         }
-        input.close();
     }
 
     private static void cadastroNumeroEnderecoEditora() {
@@ -208,7 +200,6 @@ public class ICadastroExemplar {
             numeroEnderecoEditora = numeroEnderecoEditoraCadastro;
             break;
         }
-        input.close();
     }
 
     private static void cadastroCepEditora() {
@@ -226,6 +217,5 @@ public class ICadastroExemplar {
             cepEnderecoEditora = cepEditoraCadastro;
             break;
         }
-        input.close();
     }
 }

@@ -33,7 +33,6 @@ public final class ICadastroUsuario {
             nome = nomeUsuario;
             break;
         }
-        input.close();
     }
 
     private static void cadastroCpfUsuario() {
@@ -51,7 +50,6 @@ public final class ICadastroUsuario {
             cpf = cpfUsuario;
             break;
         }
-        input.close();
     }
 
     private static void cadastroSenhaUsuario() {
@@ -69,7 +67,6 @@ public final class ICadastroUsuario {
             senha = senhaUsuario;
             break;
         }
-        input.close();
     }
 
     private static void cadastroEnderecoUsuario() {
@@ -100,7 +97,6 @@ public final class ICadastroUsuario {
             rua = ruaUsuario;
             break;
         }
-        input.close();
     }
 
     private static void numeroEnderecoUsuario() {
@@ -122,7 +118,6 @@ public final class ICadastroUsuario {
             numeroEndereco = numeroEnd;
             break;
         }
-        input.close();
     }
 
     private static void cepUsuario() {
@@ -144,6 +139,5 @@ public final class ICadastroUsuario {
             cep = cepUsuario;
             break;
         }
-        input.close();
     }
 }

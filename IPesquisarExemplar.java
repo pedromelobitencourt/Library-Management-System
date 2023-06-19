@@ -76,7 +76,6 @@ public class IPesquisarExemplar { // Pesquisar Exemplar
             }
             System.out.println();
         }
-        input.close();
         ExemplaresViewer.visualizarExemplares(exemplares);
     }
 
@@ -92,7 +91,6 @@ public class IPesquisarExemplar { // Pesquisar Exemplar
         opt = input.nextLine();
 
         System.out.println();
-        input.close();
         if(opt.equals("S")) return true;
         return false;
     }
@@ -112,7 +110,7 @@ public class IPesquisarExemplar { // Pesquisar Exemplar
             // System.out.println("Digite " + ISBN + " para pesquisar um exemplar pelo ISBN");
             // System.out.println("Digite " + IDIOMA + " para pesquisar um exemplar pelo idioma do exemplar");
             // System.out.println("Digite " + DISPONIVEL + " para pesquisar um exemplar por sua disponibilidade");
-            // System.out.println("Digite " + CANCELAR + " para cancelar a pesquisa");
+            System.out.println("Digite " + CANCELAR + " para cancelar a pesquisa");
             System.out.print("Sua opção: ");
 
             try{

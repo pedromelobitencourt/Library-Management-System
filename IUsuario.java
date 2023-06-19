@@ -4,7 +4,7 @@ public class IUsuario {
     protected final static int PESQUISAR = 1;
     protected final static int SAIR = 0;
 
-    protected final static int MENOR_ID_DISPONIVEL = 2; // Se adicionar opção na interface do usuário, aumentar
+    protected static int MENOR_ID_DISPONIVEL = 2; // Se adicionar opção na interface do usuário, aumentar
 
     protected static ArrayList<Integer> optionsId;
     protected static ArrayList<String> optionsDesc;
@@ -18,6 +18,8 @@ public class IUsuario {
 
         optionsId.add(SAIR);
         optionsDesc.add("Digite " + SAIR + " para sair de sua conta");
+
+        MENOR_ID_DISPONIVEL = 2;
     }
 
     public static void executarInterface() {

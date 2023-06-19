@@ -8,6 +8,11 @@ public class Adm extends Usuario { // Adm ter um código seria bom para ter um A
         this.id = ID++;
     }
 
+    public Adm(Usuario usuario) {
+        super(usuario.getNome(), usuario.getCpf(), usuario.getSenha(), usuario.getEndereco());        
+        this.id = ID++;
+    }
+
     public void executarInterface() {
         if(this.id == 1)
             IAdmPrincipal.executarInterface();

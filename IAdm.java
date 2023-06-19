@@ -1,8 +1,8 @@
 public class IAdm extends IUsuario {
-    private static int CADASTRAR_USUARIO;
-    private static int REMOVER_USUARIO;
-    private static int CADASTRAR_LIVRO;
-    private static int GERENCIAR_EMPRESTIMO;
+    protected static int CADASTRAR_USUARIO;
+    protected static int REMOVER_USUARIO;
+    protected static int CADASTRAR_LIVRO;
+    protected static int GERENCIAR_EMPRESTIMO;
 
     public static int getConstCadastrarUsuario() {
         return CADASTRAR_USUARIO;
@@ -47,6 +47,8 @@ public class IAdm extends IUsuario {
         final String DESC_GERENCIAR_EMPRESTIMO = "Digite " + GERENCIAR_EMPRESTIMO + " para gerenciar empréstimo";
         optionsId.add(GERENCIAR_EMPRESTIMO);
         optionsDesc.add(DESC_GERENCIAR_EMPRESTIMO);
+
+        MENOR_ID_DISPONIVEL = id;
 
         opcaoSairUltima();
     }

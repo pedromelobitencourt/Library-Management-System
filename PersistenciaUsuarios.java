@@ -31,9 +31,12 @@ public final class PersistenciaUsuarios {
     public void cadastrarUsuario(Usuario usuario) {
         String cpf = usuario.getCpf();
 
-        if(!usuarios.containsKey(cpf)) usuarios.put(cpf, usuario);
+        if(!usuarios.containsKey(cpf)) {
+            usuarios.put(cpf, usuario);
+            System.out.println("O usuário " + usuario + " foi cadastrado com sucesso\n");
+        }
 
-        else System.out.println("Este usuário já foi cadastrado");
+        else System.out.println("Este usuário já foi cadastrado\n");
     }
 
     public ArrayList<Usuario> pesquisarUsuarioPeloNome(String nome) {
@@ -75,15 +78,19 @@ public final class PersistenciaUsuarios {
             if(usuarios.containsKey(cpf)) {
                 Usuario usuario = usuarios.get(cpf);
 
-                System.out.println("O usuário " + usuario + " foi removido com sucesso");
+                System.out.println("O usuário " + usuario + " foi removido com sucesso\n");
 
                 usuarios.remove(cpf);
             }
-            else System.out.println("Não existe esse usuário cadastrado");
+            else System.out.println("Não existe esse usuário cadastrado\n");
         }
         else {
-            System.out.println("Não é possível remover o Administrador Principal");
+            System.out.println("Não é possível remover o Administrador Principal\n");
         }
+    }
+
+    public Usuario pesquisarUsuario(String cpf) {
+        return usuarios.get(cpf);
     }
 
     public HashMap<String, Usuario> getUsuarios() {

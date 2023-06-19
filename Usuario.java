@@ -55,4 +55,9 @@ public class Usuario {
     public void executarInterface() {
         IUsuario.executarInterface();
     }
+
+    public String toString() {
+        String ans = this.getNome() + " com o cpf: " + getCpf();
+        return ans;
+    }
 }

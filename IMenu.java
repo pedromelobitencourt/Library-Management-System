@@ -57,25 +57,28 @@ public class IMenu {
         final int PROMOVER_ADM = IAdmPrincipal.getConstPromoverAdm();
         final int REMOVER_ADM = IAdmPrincipal.getConstRemoverAdm();
 
-        if (opt == PESQUISAR) {
+        if(opt == PESQUISAR) {
             IPesquisarExemplar.executar();
         }
-        else if (opt == SAIR) {
+        else if(opt == SAIR) {
             sair = true;
         }
-        else if (opt == CADASTRAR_USUARIO) {
+        else if(opt == CADASTRAR_USUARIO) {
             ICadastroUsuario.executarInterface();
         }
-        else if (opt == PROMOVER_ADM) {
+        else if(opt == PROMOVER_ADM) {
+            IPromoverAdm.executar();
+        }
+        else if(opt == REMOVER_USUARIO) {
             // Corpo vazio
         }
-        else if (opt == REMOVER_USUARIO) {
-            // Corpo vazio
-        }
-        else if (opt == CADASTRAR_LIVRO) {
+        else if(opt == CADASTRAR_LIVRO) {
             ICadastroExemplar.executarInterface();
         }
-        else if (opt == GERENCIAR_EMPRESTIMO) {
+        else if(opt == GERENCIAR_EMPRESTIMO) {
+            // Corpo vazio
+        }
+        else if(opt == REMOVER_ADM) {
             // Corpo vazio
         }
     }
