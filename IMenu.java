@@ -70,7 +70,7 @@ public class IMenu {
             IPromoverAdm.executar();
         }
         else if(opt == REMOVER_USUARIO) {
-            // Corpo vazio
+            IRemoverUsuario.executarInterface();
         }
         else if(opt == CADASTRAR_LIVRO) {
             ICadastroExemplar.executarInterface();
@@ -79,7 +79,7 @@ public class IMenu {
             // Corpo vazio
         }
         else if(opt == REMOVER_ADM) {
-            // Corpo vazio
+            IRemoverAdm.executarInterface();
         }
     }
 }

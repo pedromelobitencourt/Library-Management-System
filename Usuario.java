@@ -18,6 +18,15 @@ public class Usuario {
         this.emprestimos = new ArrayList<Emprestimo>();
     }
 
+    public Usuario(Adm adm) {
+        this.nome = adm.getNome();
+        this.cpf = adm.getCpf();
+        this.senha = adm.getSenha();
+        this.endereco = adm.getEndereco();
+
+        this.emprestimos = new ArrayList<Emprestimo>();
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }

@@ -32,14 +32,14 @@ public final class CtrlAdm {
     public void removerAdm(String cpf) {
         PersistenciaUsuarios persistenciaUsuarios = PersistenciaUsuarios.getInstance();
 
-        Usuario adm = persistenciaUsuarios.pesquisarUsuario(cpf);
+        Adm adm = persistenciaUsuarios.pesquisarAdm(cpf);
 
         if(adm == null) {
             System.out.println("Não existe um usuário com o cpf: " + cpf + "\n");
             return;
         }
 
-        Usuario usuarioComum = (Usuario) adm;
+        Usuario usuarioComum = new Usuario(adm);
 
         persistenciaUsuarios.removerUsuario(cpf);
         persistenciaUsuarios.cadastrarUsuario(usuarioComum);

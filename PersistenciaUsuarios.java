@@ -93,6 +93,13 @@ public final class PersistenciaUsuarios {
         return usuarios.get(cpf);
     }
 
+    public Adm pesquisarAdm(String cpf) {
+        Usuario usuario = usuarios.get(cpf);
+
+        if(usuario instanceof Adm) return (Adm) usuario;
+        return null;
+    }
+
     public HashMap<String, Usuario> getUsuarios() {
         return usuarios;
     }
