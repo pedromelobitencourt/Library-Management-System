@@ -1,4 +1,4 @@
-package src.ctrl;
+package src.controllers;
 
 import java.util.ArrayList;
 import java.util.HashMap;

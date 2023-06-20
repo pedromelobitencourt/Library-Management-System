@@ -2,7 +2,7 @@ package src.view.interfaces;
 
 import java.util.Scanner;
 
-import src.ctrl.CtrlEditora;
+import src.controllers.CtrlEditora;
 import src.model.concreta.Editora;
 import src.model.concreta.Endereco;
 

@@ -1,12 +1,10 @@
-package src.ctrl;
+package src.controllers;
 
 import java.util.HashMap;
 
+import src.controllers.CtrlUsuarios;
 import src.model.concreta.Adm;
 import src.model.concreta.Usuario;
-
-import src.ctrl.CtrlUsuarios;
-
 import src.model.persistencia.PersistenciaUsuarios;
 
 

@@ -1,8 +1,7 @@
 package src.view.interfaces;
 
+import src.controllers.CtrlExemplar;
 import src.model.concreta.Livro;
-
-import src.ctrl.CtrlExemplar;
 
 public class ICadastroExemplar {
 

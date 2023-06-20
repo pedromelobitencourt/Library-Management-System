@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import src.view.viewer.UsuariosViewer;
+
 public class IMenu {
     private static boolean sair; // Sair do menu
 
@@ -54,6 +56,7 @@ public class IMenu {
         final int REMOVER_USUARIO = IAdm.getConstRemoverUsuario();
         final int CADASTRAR_LIVRO = IAdm.getConstCadastrarLivro();
         final int GERENCIAR_EMPRESTIMO = IAdm.getConstGerenciarEmprestimo();
+        final int VISUALIZAR_USUARIOS = IAdm.getConstVisualizarUsuarios();
 
         // Funções do Adm Principal (ID = 1)
         final int PROMOVER_ADM = IAdmPrincipal.getConstPromoverAdm();
@@ -82,6 +85,9 @@ public class IMenu {
         }
         else if(opt == REMOVER_ADM) {
             IRemoverAdm.executarInterface();
+        }
+        else if(opt == VISUALIZAR_USUARIOS) {
+            UsuariosViewer.visualizarTodosUsuarios();
         }
     }
 }

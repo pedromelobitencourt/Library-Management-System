@@ -3,9 +3,8 @@ package src.view.interfaces;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import src.controllers.CtrlAutores;
 import src.model.concreta.Autor;
-
-import src.ctrl.CtrlAutores;
 
 public class ICadastroAutor {
     private static String nome;

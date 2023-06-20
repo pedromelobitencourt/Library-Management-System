@@ -2,7 +2,7 @@ package src.view.interfaces;
 
 import java.util.Scanner;
 
-import src.ctrl.CtrlAdm;
+import src.controllers.CtrlAdm;
 
 public class IRemoverAdm {
     private static char CANCELAR = '0';

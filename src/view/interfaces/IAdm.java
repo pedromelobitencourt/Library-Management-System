@@ -5,6 +5,7 @@ public class IAdm extends IUsuario {
     protected static int REMOVER_USUARIO;
     protected static int CADASTRAR_LIVRO;
     protected static int GERENCIAR_EMPRESTIMO;
+    protected static int VISUALIZAR_USUARIOS;
 
     public static int getConstCadastrarUsuario() {
         return CADASTRAR_USUARIO;
@@ -22,6 +23,10 @@ public class IAdm extends IUsuario {
         return GERENCIAR_EMPRESTIMO;
     }
 
+    public static int getConstVisualizarUsuarios() {
+        return VISUALIZAR_USUARIOS;
+    }
+    
     protected static void addOptions() {
         IUsuario.addOptions();
 
@@ -49,6 +54,12 @@ public class IAdm extends IUsuario {
         final String DESC_GERENCIAR_EMPRESTIMO = "Digite " + GERENCIAR_EMPRESTIMO + " para gerenciar empréstimo";
         optionsId.add(GERENCIAR_EMPRESTIMO);
         optionsDesc.add(DESC_GERENCIAR_EMPRESTIMO);
+
+
+        VISUALIZAR_USUARIOS = id++;
+        final String DESC_VISUALIZAR_USUARIOS = "Digite " + VISUALIZAR_USUARIOS + " para visualizar todos os usuários cadastrados";
+        optionsId.add(VISUALIZAR_USUARIOS);
+        optionsDesc.add(DESC_VISUALIZAR_USUARIOS);
 
         MENOR_ID_DISPONIVEL = id;
 

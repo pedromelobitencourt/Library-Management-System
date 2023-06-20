@@ -3,9 +3,8 @@ package src.view.interfaces;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import src.controllers.CtrlUsuarios;
 import src.model.concreta.Usuario;
-
-import src.ctrl.CtrlUsuarios;
 
 public class ILogin {
     private static final int LOGAR = 1;

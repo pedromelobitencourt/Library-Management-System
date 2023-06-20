@@ -4,10 +4,8 @@ import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import src.controllers.CtrlExemplar;
 import src.model.concreta.Exemplar;
-
-import src.ctrl.CtrlExemplar;
-
 import src.view.viewer.ExemplaresViewer;
 
 public class IPesquisarExemplar { // Pesquisar Exemplar

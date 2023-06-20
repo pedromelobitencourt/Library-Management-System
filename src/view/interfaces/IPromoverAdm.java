@@ -2,7 +2,7 @@ package src.view.interfaces;
 
 import java.util.Scanner;
 
-import src.ctrl.CtrlAdm;
+import src.controllers.CtrlAdm;
 
 public class IPromoverAdm {
     private static final String CANCELAR = "0";

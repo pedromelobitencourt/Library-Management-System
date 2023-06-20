@@ -2,9 +2,8 @@ package src.view.viewer;
 
 import java.util.HashMap;
 
+import src.controllers.CtrlAutores;
 import src.model.concreta.Autor;
-
-import src.ctrl.CtrlAutores;
 
 public final class AutoresViewer {
     public static void visualizarTodosAutores() {

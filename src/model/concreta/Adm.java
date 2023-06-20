@@ -28,4 +28,11 @@ public class Adm extends Usuario { // Adm ter um código seria bom para ter um A
     public int getId() {
         return this.id;
     }
+
+    @Override
+    public String toString() {
+        String ans = "Administrador " + super.toString();
+
+        return ans;
+    }
 }

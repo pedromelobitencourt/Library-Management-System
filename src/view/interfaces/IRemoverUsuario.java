@@ -2,7 +2,7 @@ package src.view.interfaces;
 
 import java.util.Scanner;
 
-import src.ctrl.CtrlUsuarios;
+import src.controllers.CtrlUsuarios;
 
 public class IRemoverUsuario {
     private static char CANCELAR = '0';

@@ -4,9 +4,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import src.model.concreta.Usuario;
+import src.controllers.CtrlUsuarios;
 import src.model.concreta.Endereco;
-
-import src.ctrl.CtrlUsuarios;
 
 public final class ICadastroUsuario {
     private static String nome;

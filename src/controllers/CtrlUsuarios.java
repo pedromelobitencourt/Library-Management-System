@@ -1,4 +1,4 @@
-package src.ctrl;
+package src.controllers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -100,5 +100,12 @@ public final class CtrlUsuarios { // Singleton tem final
         }
 
         return pesquisados;
+    }
+
+    public HashMap<String, Usuario> getUsuarios() {
+        PersistenciaUsuarios persistenciaUsuarios = PersistenciaUsuarios.getInstance();
+        HashMap<String, Usuario> usuarios = persistenciaUsuarios.getUsuarios();
+
+        return usuarios;
     }
 }

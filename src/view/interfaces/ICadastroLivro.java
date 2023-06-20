@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import src.controllers.CtrlAutores;
+import src.controllers.CtrlLivro;
 import src.model.concreta.Autor;
 import src.model.concreta.Editora;
 import src.model.concreta.Livro;
-
-import src.ctrl.CtrlAutores;
-import src.ctrl.CtrlLivro;
 import src.view.viewer.AutoresViewer;
 
 public class ICadastroLivro {
