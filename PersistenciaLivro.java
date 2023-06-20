@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 
 public class PersistenciaLivro {
     private static PersistenciaLivro persistenciaLivro;
@@ -16,27 +15,22 @@ public class PersistenciaLivro {
         return persistenciaLivro;
     }
 
-    public void cadastrarLivro(Livro livro) {
+    public void cadastrarLivroJaExite(Livro livro) {
         String nomeLivro = livro.getNome();
 
-        if(!livros.containsKey(nomeLivro)) {
-            ArrayList<Livro> l = new ArrayList<Livro>();
-            l.add(livro);
+        ArrayList<Livro> l = livros.get(nomeLivro);
 
-            livros.put(nomeLivro, l);
-        }
-        else {
-            ArrayList<Livro> l = livros.get(nomeLivro);
-
-            l.add(livro);
-        }
+        l.add(livro);
     }
 
-    // public ArrayList<Livro> pesquisarLivro(String nomeLivro) {
-    //     if(livros.containsKey(nomeLivro)) return livros.get(nomeLivro);
+    public void cadastrarLivroNExite(Livro livro) {
+        String nomeLivro = livro.getNome();
 
-    //     return null;
-    // }
+        ArrayList<Livro> l = new ArrayList<Livro>();
+        l.add(livro);
+
+        livros.put(nomeLivro, l);
+    }
 
     public HashMap<String, ArrayList<Livro> > getLivros() {
         return livros;

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public final class CtrlLivro {
     private static CtrlLivro ctrlLivro;
 
@@ -19,7 +22,16 @@ public final class CtrlLivro {
 
         PersistenciaLivro persistenciaLivro = PersistenciaLivro.getInstance();
 
-        persistenciaLivro.cadastrarLivro(livro);
+        HashMap<String, ArrayList<Livro> > livros = persistenciaLivro.getLivros();
+
+        String nomeLivro = livro.getNome();
+
+        if(!livros.containsKey(nomeLivro)) {
+            persistenciaLivro.cadastrarLivroNExite(livro);
+        }
+        else {
+            persistenciaLivro.cadastrarLivroJaExite(livro);
+        }
     }
 
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public final class CtrlEditora {
     private static CtrlEditora ctrlEditora;
@@ -20,15 +21,27 @@ public final class CtrlEditora {
         // TODO: Fazer verificações
 
         PersistenciaEditora persistenciaEditora = PersistenciaEditora.getInstance();
+        HashMap<String, Editora> editoras = persistenciaEditora.getEditoras();
 
-        persistenciaEditora.cadastrarEditora(editora);
+        String nomeEditora = editora.getNome();
+
+        if(!editoras.containsKey(nomeEditora)) persistenciaEditora.cadastrarEditora(editora);
     }
 
-    public ArrayList<Editora> pesquisarEditoraPeloNome(String nomeEditora) { // Padronizar com ArrayList
+    public ArrayList<Editora> pesquisarEditoraPeloNome(String nome) { // Padronizar com ArrayList
         // TODO: Fazer verificações
-
         PersistenciaEditora persistenciaEditora = PersistenciaEditora.getInstance();
 
-        return persistenciaEditora.pesquisarEditoraPeloNome(nomeEditora);
+        HashMap<String, Editora> editoras = persistenciaEditora.getEditoras();
+
+        ArrayList<Editora> editorasPesquisa = new ArrayList<Editora>();
+
+        if(editoras.containsKey(nome)) {
+            Editora editora = editoras.get(nome);
+
+            editorasPesquisa.add(editora);
+        }
+
+        return editorasPesquisa;
     }
 }
