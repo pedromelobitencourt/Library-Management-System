@@ -58,14 +58,6 @@ public final class CtrlUsuarios { // Singleton tem final
         return null;
     }
 
-    public Usuario pesquisarUsuario(String cpf) {
-        PersistenciaUsuarios persistenciaUsuarios = PersistenciaUsuarios.getInstance();
-
-        HashMap<String, Usuario> usuarios = persistenciaUsuarios.getUsuarios();
-
-        return usuarios.get(cpf);
-    }
-
     public void removerUsuario(String cpf) {
         PersistenciaUsuarios persistenciaUsuarios = PersistenciaUsuarios.getInstance();
         HashMap<String, Usuario> usuarios = persistenciaUsuarios.getUsuarios();
@@ -83,6 +75,16 @@ public final class CtrlUsuarios { // Singleton tem final
         else {
             System.out.println("Não é possível remover o Administrador Principal\n");
         }
+    }
+
+    public ArrayList<Usuario> pesquisarUsuarioPeloCPF(String cpf) {
+        PersistenciaUsuarios persistenciaUsuarios = PersistenciaUsuarios.getInstance();
+        HashMap<String, Usuario> usuarios = persistenciaUsuarios.getUsuarios();
+
+        ArrayList<Usuario> usuarioPesquisado = new ArrayList<Usuario>();
+        usuarioPesquisado.add(usuarios.get(cpf));
+
+        return usuarioPesquisado;
     }
 
     public ArrayList<Usuario> pesquisarUsuarioPeloNome(String nome) {

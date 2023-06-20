@@ -1,5 +1,6 @@
 package src.controllers;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import src.controllers.CtrlUsuarios;
@@ -26,7 +27,11 @@ public final class CtrlAdm {
 
         CtrlUsuarios ctrlUsuarios = CtrlUsuarios.getInstance();
 
-        Usuario usuario = ctrlUsuarios.pesquisarUsuario(cpf);
+        ArrayList<Usuario> usuarios = ctrlUsuarios.pesquisarUsuarioPeloCPF(cpf);
+
+        Usuario usuario = null;
+
+        if(usuarios != null) usuario = usuarios.get(0);
 
         if(usuario == null) {
             System.out.println("Não existe um usuário com o cpf: " + cpf + "\n");

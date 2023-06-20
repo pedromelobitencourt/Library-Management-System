@@ -46,4 +46,18 @@ public class Emprestimo {
     public Exemplar getExemplar() {
         return this.exemplar;
     }
+
+    public String toString() {
+        String ans = this.usuario.toString();
+        ans += this.exemplar.toString();
+        ans += "Data da última renovação: " + data.toString();
+        ans += "Quantidade de renovações restantes: " + qntRenovacoes;
+
+        Calendar dataPrevista = (Calendar) data.clone();
+        dataPrevista.add(Calendar.DAY_OF_MONTH, prazoDias);
+
+        ans += "Data prevista de entrega: " + dataPrevista.toString();
+
+        return ans;
+    }
 }

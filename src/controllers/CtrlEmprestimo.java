@@ -1,17 +1,28 @@
 package src.controllers;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 
 import src.model.concreta.Usuario;
+import src.model.persistencia.PersistenciaEmprestimos;
 import src.model.concreta.Exemplar;
 import src.model.concreta.Emprestimo;
 
 
-public class CtrlEmprestimo {
+public final class CtrlEmprestimo {
     private final int QNT_RENOVACAO = 10; 
     private final int PRAZO_DIAS = 15;
-    private ArrayList<Emprestimo> emprestimos; // Todos empréstimos da biblioteca
+
+    private static CtrlEmprestimo ctrlEmprestimo;
+
+    private CtrlEmprestimo() {
+        ;
+    }
+
+    public static CtrlEmprestimo getInstance() {
+        if(ctrlEmprestimo == null) ctrlEmprestimo = new CtrlEmprestimo();
+
+        return ctrlEmprestimo;
+    }
 
     public void emprestar(Usuario usuario, Exemplar exemplar) {
         // TODO faz verificações
@@ -24,7 +35,9 @@ public class CtrlEmprestimo {
         Emprestimo emprestimo = new Emprestimo(dataAtual, QNT_RENOVACAO, PRAZO_DIAS, usuario, exemplar);
         exemplar.deixarIndisponivel();
 
-        emprestimos.add(emprestimo);
+        PersistenciaEmprestimos persistenciaEmprestimos = PersistenciaEmprestimos.getInstance();
+
+        persistenciaEmprestimos.cadastrarEmprestimo(emprestimo);
     }
 
     public void renovar(Emprestimo emprestimo) {
@@ -35,9 +48,11 @@ public class CtrlEmprestimo {
 
            emprestimo.setData(dataAtual);
            emprestimo.decrementarQntRenovacoes();
+
+           System.out.println("Renovação realizada com sucesso");
         }
         else {
-            // TODO: Não é possível realizar mais renovações
+            System.out.println("Não é posssível realizar mais renovações, pois já renovou muitas vezes");
         }
     }
 

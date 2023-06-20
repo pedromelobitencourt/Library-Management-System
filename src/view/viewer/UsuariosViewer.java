@@ -2,6 +2,7 @@ package src.view.viewer;
 
 import src.model.concreta.Usuario;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import src.controllers.CtrlUsuarios;
@@ -15,5 +16,12 @@ public class UsuariosViewer {
         for(Usuario usuario : usuarios.values())
             System.out.println(usuario + "\n");
         System.out.println("\n");
+    }
+
+    public static void visualizarUsuarios(ArrayList<Usuario> usuarios) {
+        for(Usuario usuario : usuarios) {
+            System.out.println(usuario + "\n");
+        }
+        System.out.println();
     }
 }

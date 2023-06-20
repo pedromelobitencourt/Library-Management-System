@@ -1,5 +1,6 @@
 package src.controllers;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 import src.model.concreta.Exemplar;
@@ -54,5 +55,21 @@ public final class CtrlExemplar {
         }
 
         return new HashSet<>(persistenciaExemplares.getExemplares());
+    }
+
+    public Exemplar getExemplar(int codigo) {
+        ArrayList<Exemplar> exemplares = getExemplares();
+
+        for(Exemplar exemplar : exemplares) {
+            if(exemplar.getCodigo() == codigo) return exemplar;
+        }
+
+        return null;
+    }
+
+    public ArrayList<Exemplar> getExemplares() {
+        PersistenciaExemplares persistenciaExemplares = PersistenciaExemplares.getInstance();
+
+        return persistenciaExemplares.getExemplares();
     }
 }

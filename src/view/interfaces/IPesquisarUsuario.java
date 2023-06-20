@@ -32,15 +32,17 @@ public class IPesquisarUsuario {
 
             switch(opt) {
                 case CPF:
-                    ;
+                    IPesquisarUsuarioCPF.executarInterface();
+                    cancelar = true;
                     break;
                 
                 case NOME:
-                    ;
+                    IPesquisarUsuarioNome.executarInterface();
+                    cancelar = true;
                     break;
                 
                 case CANCELAR:
-                    ;
+                    cancelar = true;
                     break;
                 
                 default:
