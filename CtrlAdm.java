@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public final class CtrlAdm {
     private static CtrlAdm ctrlAdm;
     
@@ -14,9 +16,9 @@ public final class CtrlAdm {
     public void promoverAdm(String cpf) {
         // TODO: Tentar promover um usuário que já é adm
 
-        PersistenciaUsuarios persistenciaUsuarios = PersistenciaUsuarios.getInstance();
+        CtrlUsuarios ctrlUsuarios = CtrlUsuarios.getInstance();
 
-        Usuario usuario = persistenciaUsuarios.pesquisarUsuario(cpf);
+        Usuario usuario = ctrlUsuarios.pesquisarUsuario(cpf);
 
         if(usuario == null) {
             System.out.println("Não existe um usuário com o cpf: " + cpf + "\n");
@@ -25,14 +27,26 @@ public final class CtrlAdm {
 
         Adm usuarioAdm = new Adm(usuario);
 
-        persistenciaUsuarios.removerUsuario(cpf);
-        persistenciaUsuarios.cadastrarUsuario(usuarioAdm);
+        ctrlUsuarios.removerUsuario(cpf);
+        ctrlUsuarios.cadastrarUsuario(usuarioAdm);
+    }
+
+    public Adm pesquisarAdm(String cpf) {
+        PersistenciaUsuarios persistenciaUsuarios = PersistenciaUsuarios.getInstance();
+
+        HashMap<String, Usuario> usuarios = persistenciaUsuarios.getUsuarios();
+
+        Usuario usuario = usuarios.get(cpf);
+
+        if(usuario instanceof Adm) return (Adm) usuario;
+        return null;
     }
 
     public void removerAdm(String cpf) {
         PersistenciaUsuarios persistenciaUsuarios = PersistenciaUsuarios.getInstance();
+        CtrlUsuarios ctrlUsuarios = CtrlUsuarios.getInstance();
 
-        Adm adm = persistenciaUsuarios.pesquisarAdm(cpf);
+        Adm adm = pesquisarAdm(cpf);
 
         if(adm == null) {
             System.out.println("Não existe um usuário com o cpf: " + cpf + "\n");
@@ -42,6 +56,6 @@ public final class CtrlAdm {
         Usuario usuarioComum = new Usuario(adm);
 
         persistenciaUsuarios.removerUsuario(cpf);
-        persistenciaUsuarios.cadastrarUsuario(usuarioComum);
+        ctrlUsuarios.cadastrarUsuario(usuarioComum);
     }
 }

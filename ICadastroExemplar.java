@@ -8,12 +8,6 @@ public class ICadastroExemplar {
     private static String nomeAutor;
     private static String nacionalidade;
 
-    private static String nomeEditora;
-
-    private static String nomeRuaEditora;
-    private static int numeroEnderecoEditora;
-    private static long cepEnderecoEditora;
-
     public static void executarInterface() {
         cadastroLivro();
     }
@@ -35,35 +29,13 @@ public class ICadastroExemplar {
 
         Autor autor = new Autor(nomeAutor, nacionalidade);
 
-        Endereco endereco = new Endereco(nomeRuaEditora, numeroEnderecoEditora, cepEnderecoEditora);
+        // Livro livro = new Livro(nomeLivro, isbn, idioma, autor, editora);
 
-        Editora editora = new Editora(nomeEditora, endereco);
-
-        Livro livro = new Livro(nomeLivro, isbn, idioma, autor, editora);
-
-        CtrlLivro ctrlLivro = CtrlLivro.getInstance();
-        ctrlLivro.cadastrarLivro(livro);
+        // CtrlLivro ctrlLivro = CtrlLivro.getInstance();
+        // ctrlLivro.cadastrarLivro(livro);
 
         CtrlExemplar ctrlExemplar = CtrlExemplar.getInstance();
         ctrlExemplar.cadastrarExemplar(livro);
-    }
-
-    private static void cadastroAutor() {
-        cadastroNomeAutor();
-        System.out.println();
-        cadastroNacionalidade();
-        System.out.println();
-    }
-
-    private static void cadastroEditora() {
-        cadastroNomeEditora();
-        System.out.println();
-        cadastroNomeRuaEditora();
-        System.out.println();
-        cadastroNumeroEnderecoEditora();
-        System.out.println();
-        cadastroCepEditora();
-        System.out.println();
     }
 
     private static void cadastroNomeLivro() {
@@ -113,108 +85,6 @@ public class ICadastroExemplar {
             // TODO: Validar nome
 
             idioma = idiomaCadastro;
-            break;
-        }
-    }
-
-    private static void cadastroNomeAutor() {
-        String nomeAutorCadastro;
-
-        Scanner input = new Scanner(System.in);
-
-        while(true) {
-            System.out.println("Digite o nome do autor do livro: ");
-
-            nomeAutorCadastro = input.nextLine();
-
-            // TODO: Validar nome
-
-            nomeAutor = nomeAutorCadastro;
-            break;
-        }
-    }
-
-    private static void cadastroNacionalidade() {
-        String nacionalidadeCadastro;
-
-        Scanner input = new Scanner(System.in);
-
-        while(true) {
-            System.out.println("Digite o nacionalidade do autor do livro: ");
-
-            nacionalidadeCadastro = input.nextLine();
-
-            // TODO: Validar nome
-
-            nacionalidade = nacionalidadeCadastro;
-            break;
-        }
-    }
-
-    private static void cadastroNomeEditora() {
-        String nomeEditoraCadastro;
-
-        Scanner input = new Scanner(System.in);
-
-        while(true) {
-            System.out.println("Digite o nome da editora do livro: ");
-
-            nomeEditoraCadastro = input.nextLine();
-
-            // TODO: Validar nome
-
-            nomeEditora = nomeEditoraCadastro;
-            break;
-        }
-    }
-
-    private static void cadastroNomeRuaEditora() {
-        String nomeRuaEditoraCadastro;
-
-        Scanner input = new Scanner(System.in);
-
-        while(true) {
-            System.out.println("Digite o nome da rua da editora do livro: ");
-
-            nomeRuaEditoraCadastro = input.nextLine();
-
-            // TODO: Validar nome
-
-            nomeRuaEditora = nomeRuaEditoraCadastro;
-            break;
-        }
-    }
-
-    private static void cadastroNumeroEnderecoEditora() {
-        int numeroEnderecoEditoraCadastro;
-
-        Scanner input = new Scanner(System.in);
-
-        while(true) {
-            System.out.println("Digite o número do endereço da editora do livro: ");
-
-            numeroEnderecoEditoraCadastro = input.nextInt();
-
-            // TODO: Validar nome
-
-            numeroEnderecoEditora = numeroEnderecoEditoraCadastro;
-            break;
-        }
-    }
-
-    private static void cadastroCepEditora() {
-        long cepEditoraCadastro;
-
-        Scanner input = new Scanner(System.in);
-
-        while(true) {
-            System.out.println("Digite o cep do endereço da editora do livro: ");
-
-            cepEditoraCadastro = input.nextLong();
-
-            // TODO: Validar nome
-
-            cepEnderecoEditora = cepEditoraCadastro;
             break;
         }
     }

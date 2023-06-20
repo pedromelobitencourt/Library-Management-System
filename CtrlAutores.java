@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public final class CtrlAutores {
     private static CtrlAutores ctrlAutores;
@@ -8,23 +9,68 @@ public final class CtrlAutores {
         ;
     }
 
-    public CtrlAutores getInstance() {
+    public static CtrlAutores getInstance() {
         if(ctrlAutores == null) ctrlAutores = new CtrlAutores();
 
         return ctrlAutores;
     }
 
-    public static void cadastrarAutor(Autor autor) {
+    public void cadastrarAutor(Autor autor) {
         PersistenciaAutores persistenciaAutores = PersistenciaAutores.getInstance();
+        HashMap<String, Autor> autores = persistenciaAutores.getAutores();
 
-        persistenciaAutores.cadastrarAutor(autor);
+        String nomeAutor = autor.getNome();
+
+        if(!autores.containsKey(nomeAutor)) persistenciaAutores.cadastrarAutor(autor);
     }
 
-    public static ArrayList<Autor> pesquisarAutorPeloNome(String nomeAutor) { // Padronizar o retorno (ArrayList)
+    public void removerAutor(Autor autor) {
+        PersistenciaAutores persistenciaAutores = PersistenciaAutores.getInstance();
+        HashMap<String, Autor> autores = persistenciaAutores.getAutores();
+
+        boolean removido = false;
+
+        if(autores.containsKey(autor.getNome())) {
+            persistenciaAutores.removerAutor(autor);
+            removido = true;
+        }
+
+        if(removido) System.out.println("O autor foi removido com sucesso");
+        else System.out.println("Não foi encontrado o autor:\n" + autor.toString());
+    }
+
+    public ArrayList<Autor> pesquisarAutorPeloNome(String nomeAutor) { // Padronizar o retorno (ArrayList)
         // TODO: Fazer verificações
 
         PersistenciaAutores persistenciaAutores = PersistenciaAutores.getInstance();
+        HashMap<String, Autor> autores = persistenciaAutores.getAutores();
 
-        return persistenciaAutores.pesquisarAutorPeloNome(nomeAutor);
+        ArrayList<Autor> autoresPesquisa = new ArrayList<Autor>();
+
+        if(autores.containsKey(nomeAutor)) autoresPesquisa.add(autores.get(nomeAutor));
+
+        return autoresPesquisa;
+    }
+
+    public static ArrayList<Autor> pesquisarAutorPelaNacionalidade(String nacionalidade) {
+        PersistenciaAutores persistenciaAutores = PersistenciaAutores.getInstance();
+        HashMap<String, Autor> autores = persistenciaAutores.getAutores();
+        
+        ArrayList<Autor> autoresNacionalidade = new ArrayList<Autor>();
+
+        for(String autorNome : autores.keySet()) {
+            Autor autor = autores.get(autorNome);
+
+            if(autor.getNacionalidade().equals(nacionalidade))
+                autoresNacionalidade.add(autor);
+        }
+
+        return autoresNacionalidade;
+    }
+
+    public HashMap<String, Autor> getAutores() {
+        PersistenciaAutores persistenciaAutores = PersistenciaAutores.getInstance();
+
+        return persistenciaAutores.getAutores();
     }
 }

@@ -18,43 +18,14 @@ public final class PersistenciaAutores {
     public void cadastrarAutor(Autor autor) {
         String nomeAutor = autor.getNome();
 
-        if(!autores.containsKey(nomeAutor)) autores.put(nomeAutor, autor);
+        autores.put(nomeAutor, autor);
     }
 
     public void removerAutor(Autor autor) {
-        boolean removido = false;
-
-        if(autores.containsKey(autor.getNome())) {
-            autores.remove(autor.getNome());
-            removido = true;
-        }
-
-        if(removido) System.out.println("O autor foi removido com sucesso");
-        else System.out.println("Não foi encontrado o autor:\n" + autor.toString());
-    }
-
-    public ArrayList<Autor> pesquisarAutorPeloNome(String nomeAutor) {
-        ArrayList<Autor> autoresPesquisa = new ArrayList<Autor>();
-
-        if(autores.containsKey(nomeAutor)) autoresPesquisa.add(autores.get(nomeAutor));
-
-        return autoresPesquisa;
+        autores.remove(autor.getNome());
     }
 
     public HashMap<String, Autor> getAutores() {
         return autores;
-    }
-
-    public static ArrayList<Autor> pesquisarAutorPelaNacionalidade(String nacionalidade) {
-        ArrayList<Autor> autoresNacionalidade = new ArrayList<Autor>();
-
-        for(String autorNome : autores.keySet()) {
-            Autor autor = autores.get(autorNome);
-
-            if(autor.getNacionalidade().equals(nacionalidade))
-                autoresNacionalidade.add(autor);
-        }
-
-        return autoresNacionalidade;
     }
 }
