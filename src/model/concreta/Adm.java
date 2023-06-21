@@ -20,6 +20,10 @@ public class Adm extends Usuario { // Adm ter um código seria bom para ter um A
         this.id = ID++;
     }
 
+    public void setSenha(String senha) {
+        if(id != 1) this.senha = senha;
+    }
+
     public void executarInterface() {
         if(this.id == 1)
             IAdmPrincipal.executarInterface();

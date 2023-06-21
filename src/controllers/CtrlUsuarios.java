@@ -3,8 +3,10 @@ package src.controllers;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import src.model.concreta.Adm;
 import src.model.concreta.Usuario;
 import src.model.persistencia.PersistenciaUsuarios;
+import src.view.interfaces.ILogin;
 
 public final class CtrlUsuarios { // Singleton tem final
     private static CtrlUsuarios instancia;
@@ -109,5 +111,20 @@ public final class CtrlUsuarios { // Singleton tem final
         HashMap<String, Usuario> usuarios = persistenciaUsuarios.getUsuarios();
 
         return usuarios;
+    }
+
+    public void redefinirSenha(String senha) {
+        Usuario usuario = ILogin.getUsuarioLogado();
+
+        if(usuario instanceof Adm) {
+            Adm adm = (Adm) usuario;
+
+            if(adm.getId() == 1) {
+                System.out.println("Não é possível redefinir a senha do Adm Principal\n");
+                return;
+            }
+        }
+
+        usuario.setSenha(senha);
     }
 }
