@@ -89,4 +89,11 @@ public final class CtrlAutor {
         if(autores.size() == 0) return false;
         return true;
     }
+
+    public boolean hasAutor(String nome) {
+        ArrayList<Autor> autores = pesquisarAutorPeloNome(nome);
+
+        if(autores.size() == 0) return false;
+        return true;
+    }
 }

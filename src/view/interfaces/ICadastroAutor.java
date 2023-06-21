@@ -16,19 +16,21 @@ public class ICadastroAutor {
     private static Autor cadastroAutor() {
         cadastroNomeAutor();
         System.out.println();
+
+        // Tem o autor ja cadastrado
+
+        CtrlAutor ctrlAutores = CtrlAutor.getInstance();
+
+        if(ctrlAutores.hasAutor(nome)) {
+            return ctrlAutores.pesquisarAutorPeloNome(nome).get(0);
+        }
+
         cadastroNacionalidade();
         System.out.println();
 
         Autor autor = new Autor(nome, nacionalidade);
 
-        // Verificar se ja tem o autor no banco
-
-        CtrlAutor ctrlAutores = CtrlAutor.getInstance();
-
-        boolean existe = ctrlAutores.verificarExistenciaAutor(autor);
-
-        if(!existe)
-            ctrlAutores.cadastrarAutor(autor);
+        ctrlAutores.cadastrarAutor(autor);
 
         return autor;
     }

@@ -3,6 +3,7 @@ package src.controllers;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+import src.model.concreta.Autor;
 import src.model.concreta.Exemplar;
 import src.model.concreta.Livro;
 
@@ -43,7 +44,35 @@ public final class CtrlExemplar {
         int size = exemplares.size();
 
         for(int i = 0; i < size; i++) {
-            if(exemplares.get(i).getLivro().getNome() == nomeLivro)
+            Exemplar exemplar = exemplares.get(i);
+            Livro livro = exemplar.getLivro();
+            String nome = livro.getNome();
+
+
+            if(nome.contains(nomeLivro))
+                exemplaresPesquisa.add(exemplares.get(i));
+        }
+
+        return exemplaresPesquisa;
+    }
+
+    public static HashSet<Exemplar> pesquisarExemplarNomeAutor(String nomeAutor) {
+        // TODO: Verificações ...
+
+        PersistenciaExemplares persistenciaExemplares = PersistenciaExemplares.getInstance(); 
+        ArrayList<Exemplar> exemplares = persistenciaExemplares.getExemplares();
+
+        HashSet<Exemplar> exemplaresPesquisa = new HashSet<Exemplar>();
+
+        int size = exemplares.size();
+
+        for(int i = 0; i < size; i++) {
+            Exemplar exemplar = exemplares.get(i);
+            Livro livro = exemplar.getLivro();
+            Autor autor = livro.getAutor();
+            String nome = autor.getNome();
+
+            if(nome.contains(nomeAutor))
                 exemplaresPesquisa.add(exemplares.get(i));
         }
 

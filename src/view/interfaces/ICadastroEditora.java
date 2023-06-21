@@ -19,6 +19,15 @@ public class ICadastroEditora {
     private static Editora cadastroEditora() {
         cadastroNomeEditora();
         System.out.println();
+
+        // Já tem a editora no banco de dados
+
+        CtrlEditora ctrlEditora = CtrlEditora.getInstance();
+
+        if(ctrlEditora.verificarExistenciaEditora(nome)) {
+            return ctrlEditora.pesquisarEditoraPeloNome(nome).get(0);
+        }
+
         cadastroNomeRuaEditora();
         System.out.println();
         cadastroNumeroEnderecoEditora();
@@ -29,13 +38,7 @@ public class ICadastroEditora {
         Endereco endereco = new Endereco(nomeRua, numero, cep);
         Editora editora = new Editora(nome, endereco);
 
-        // Verificar se ja tem a editora no banco de dados
-
-        CtrlEditora ctrlEditora = CtrlEditora.getInstance();
-
-        boolean existe = ctrlEditora.verificarExistenciaEditora(nome);
-
-        if(!existe) ctrlEditora.cadastrarEditora(editora);
+        ctrlEditora.cadastrarEditora(editora);
 
         return editora;
     }

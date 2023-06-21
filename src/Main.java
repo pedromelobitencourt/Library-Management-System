@@ -2,7 +2,7 @@
  * No sistema, há um admnistrador principal, o qual não pode ser removido
  * O sistema sempre inicia com somente tal administrador como usuário
  * 
- * CPF do Adm Principal é: 1
+ * CPF do Adm Principal é: 1 
  * Senha do Adm Principal: senhasenha
  * 
  * Algumas verificações de entrada do usuário não foram possíveis devido ao tempo

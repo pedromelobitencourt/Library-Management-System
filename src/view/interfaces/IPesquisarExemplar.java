@@ -53,7 +53,7 @@ public class IPesquisarExemplar { // Pesquisar Exemplar
                     System.out.print("Digite o nome do autor do livro: ");
                     String nomeAutor = input.nextLine();
 
-                    optionSet = CtrlExemplar.pesquisarExemplarNome(nomeAutor);
+                    optionSet = CtrlExemplar.pesquisarExemplarNomeAutor(nomeAutor);
                     exemplares.retainAll(optionSet);
                     break;
 
