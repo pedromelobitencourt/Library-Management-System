@@ -14,8 +14,8 @@ public class IPromoverAdm {
         while(!sair) {
             String opt;
 
-            System.out.println("Digite o cpf do usuário que deseja promover a administrador: ");
-            System.out.println("Digite '" + CANCELAR + "' para cancelar a operação: ");
+            System.out.println("Digite o cpf do usuário que deseja promover a administrador");
+            System.out.println("Digite '" + CANCELAR + "' para cancelar a operação");
             System.out.print("Sua opção: ");
 
             opt = input.next();

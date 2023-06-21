@@ -3,7 +3,7 @@
  * O sistema sempre inicia com somente tal administrador como usuário
  * 
  * CPF do Adm Principal é: 1
- * Senha do Adm Principal: senha
+ * Senha do Adm Principal: senhasenha
  * 
  * Algumas verificações de entrada do usuário não foram possíveis devido ao tempo
  * corrido de fim de semestre

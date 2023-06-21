@@ -14,8 +14,8 @@ public class IRemoverAdm {
         Scanner input = new Scanner(System.in);
 
         while(!sair) {
-            System.out.println("Digite o CPF do usuário que você gostaria de remover do cargo de admnistrador: ");
-            System.out.println("Digite " + CANCELAR + " caso gostaria de cancelar a operação: ");
+            System.out.println("Digite o CPF do usuário que você gostaria de remover do cargo de admnistrador");
+            System.out.println("Digite " + CANCELAR + " caso gostaria de cancelar a operação");
             System.out.print("Sua opção: ");
 
             opt = input.next();

@@ -16,7 +16,7 @@ public final class PersistenciaUsuarios {
 
         String nome = "Adm";
         String cpf = "1";
-        String senha = "senha";
+        String senha = "senhasenha";
 
         String rua = "Rua da biblioteca";
         int numero = 9;

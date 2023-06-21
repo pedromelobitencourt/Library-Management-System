@@ -54,11 +54,11 @@ public final class CtrlUsuario { // Singleton tem final
             String senhaUsuario = usuario.getSenha();
 
             if(senhaUsuario.equals(senha)) {
-                System.out.println("Logado com sucesso");
+                System.out.println("Logado com sucesso\n");
                 return usuario;
             }
             else {
-                System.out.println("Senha incorreta");
+                System.out.println("Senha incorreta\n");
                 return null;
             }
         }
