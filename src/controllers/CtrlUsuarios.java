@@ -126,5 +126,6 @@ public final class CtrlUsuarios { // Singleton tem final
         }
 
         usuario.setSenha(senha);
+        System.out.println("Sua senha foi redefinida com sucesso\n");
     }
 }

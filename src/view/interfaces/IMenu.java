@@ -53,6 +53,7 @@ public class IMenu {
         // Funções de um usuário comum
         final int PESQUISAR = IUsuario.getConstPesquisar();
         final int VISUALIZAR_PROPRIOS_EMPRESTIMOS = IUsuario.getConstVisualizarPropriosEmprestimos();
+        final int REDEFINIR_SENHA = IUsuario.getConstRedefinirSenha();
         final int SAIR = IUsuario.getConstSair();
 
         // Funções do Adm
@@ -98,6 +99,9 @@ public class IMenu {
             ArrayList<Emprestimo> emprestimos = usuario.getEmprestimos();
 
             EmprestimosViewer.visualizarEmprestimos(emprestimos);
+        }
+        else if(opt == REDEFINIR_SENHA) {
+            IRedefinirSenha.executarInterface();
         }
     }
 }

@@ -73,7 +73,7 @@ public class IAdm extends IUsuario {
     }
 
     private static void opcaoSairUltima() { // Deixar a opção de sair da conta como a última no menu
-        int indiceSair = 2;
+        int indiceSair = 3;
 
         int id = optionsId.get(indiceSair);
         String desc = optionsDesc.get(indiceSair);

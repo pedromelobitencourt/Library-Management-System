@@ -16,6 +16,8 @@ public final class IRedefinirSenha {
 
         String opt = input.nextLine();
 
+        System.out.println();
+
         if(opt.equals(CANCELAR)) return;
 
         CtrlUsuarios ctrlUsuarios = CtrlUsuarios.getInstance();
