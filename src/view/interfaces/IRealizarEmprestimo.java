@@ -20,10 +20,6 @@ public class IRealizarEmprestimo {
     private static boolean cancelar = false;
 
     public static void executarInterface() {
-        Scanner input = new Scanner(System.in);
-
-        boolean sair = false;
-
         obterUsuario();
         System.out.println();
 

@@ -1,6 +1,5 @@
 package src.view.interfaces;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import src.controllers.CtrlAutores;

@@ -1,7 +1,5 @@
 package src.model.concreta;
 
-import src.model.concreta.Usuario;
-
 import src.view.interfaces.IAdm;
 import src.view.interfaces.IAdmPrincipal;
 

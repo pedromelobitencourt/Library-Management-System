@@ -3,7 +3,6 @@ package src.controllers;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import src.controllers.CtrlUsuarios;
 import src.model.concreta.Adm;
 import src.model.concreta.Usuario;
 import src.model.persistencia.PersistenciaUsuarios;
@@ -23,8 +22,6 @@ public final class CtrlAdm {
     }
 
     public void promoverAdm(String cpf) {
-        // TODO: Tentar promover um usuário que já é adm
-
         CtrlUsuarios ctrlUsuarios = CtrlUsuarios.getInstance();
 
         ArrayList<Usuario> usuarios = ctrlUsuarios.pesquisarUsuarioPeloCPF(cpf);
@@ -35,6 +32,11 @@ public final class CtrlAdm {
 
         if(usuario == null) {
             System.out.println("Não existe um usuário com o cpf: " + cpf + "\n");
+            return;
+        }
+
+        if(isAdm(usuario)) {
+            System.out.println("Não é possível promover um admnistrador a admnistrador novamente\n");
             return;
         }
 
@@ -70,5 +72,9 @@ public final class CtrlAdm {
 
         persistenciaUsuarios.removerUsuario(cpf);
         ctrlUsuarios.cadastrarUsuario(usuarioComum);
+    }
+
+    private boolean isAdm(Usuario usuario) {
+        return usuario instanceof Adm;
     }
 }

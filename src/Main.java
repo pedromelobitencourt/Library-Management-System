@@ -6,6 +6,7 @@
  * Senha do Adm Principal: senha
  * 
  * Algumas verificações de entrada do usuário não foram possíveis devido ao tempo
+ * corrido de fim de semestre
  */
 
 package src;

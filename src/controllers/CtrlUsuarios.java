@@ -99,15 +99,13 @@ public final class CtrlUsuarios { // Singleton tem final
     public ArrayList<Usuario> pesquisarUsuarioPeloNome(String nome) {
         PersistenciaUsuarios persistenciaUsuarios = PersistenciaUsuarios.getInstance();
         HashMap<String, Usuario> usuarios = persistenciaUsuarios.getUsuarios();
-        
-        int size = usuarios.size();
 
         ArrayList<Usuario> pesquisados = new ArrayList<Usuario>();
 
-        for(int i = 0; i < size; i++) {
-            String nomeUsuario = usuarios.get(i).getNome();
-            
-            if(nomeUsuario.contains(nomeUsuario)) pesquisados.add(usuarios.get(i));
+        for(Usuario usuario : usuarios.values()) {
+            String nomeUsuario = usuario.getNome();
+
+            if(nomeUsuario.contains(nome)) pesquisados.add(usuario);
         }
 
         return pesquisados;
