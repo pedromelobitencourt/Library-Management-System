@@ -26,11 +26,18 @@ public final class CtrlUsuarios { // Singleton tem final
         PersistenciaUsuarios persistenciaUsuarios = PersistenciaUsuarios.getInstance();
         HashMap<String, Usuario> usuarios = persistenciaUsuarios.getUsuarios();
 
+        String senha = usuario.getSenha();
+
+        if(!isSenhaValida(senha)) {
+            System.out.println("Não foi possível cadastrar o usuário\n");
+            return;
+        }
+
         String cpf = usuario.getCpf();
 
         if(!usuarios.containsKey(cpf)) {
             persistenciaUsuarios.cadastrarUsuario(usuario);
-            System.out.println("O usuário " + usuario + " foi cadastrado com sucesso\n");
+            System.out.println("\nO usuário " + usuario + " foi cadastrado com sucesso\n");
         }
 
         else System.out.println("Este usuário já foi cadastrado\n");
@@ -114,18 +121,32 @@ public final class CtrlUsuarios { // Singleton tem final
     }
 
     public void redefinirSenha(String senha) {
+        if(!isSenhaValida(senha)) {
+            System.out.println("Não foi possível redefinir sua senha\n");
+            return;
+        }
+
         Usuario usuario = ILogin.getUsuarioLogado();
 
         if(usuario instanceof Adm) {
             Adm adm = (Adm) usuario;
 
             if(adm.getId() == 1) {
-                System.out.println("Não é possível redefinir a senha do Adm Principal\n");
+                System.out.println("Não é possível redefinir a senha do Adm Principal");
+                System.out.println("Contate os desenvolvedores\n");
                 return;
             }
         }
 
         usuario.setSenha(senha);
         System.out.println("Sua senha foi redefinida com sucesso\n");
+    }
+
+    private static boolean isSenhaValida(String senha) {
+        if(senha.length() < 8) {
+            System.out.println("\nDigite uma senha de pelo menos 8 caracteres\n");
+            return false;
+        }
+        return true;
     }
 }

@@ -1,6 +1,5 @@
 package src.model.persistencia;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import src.model.concreta.Usuario;

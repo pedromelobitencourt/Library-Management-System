@@ -36,15 +36,32 @@ public final class CtrlExemplar {
         // TODO: Verificações ...
 
         PersistenciaExemplares persistenciaExemplares = PersistenciaExemplares.getInstance(); 
+        ArrayList<Exemplar> exemplares = persistenciaExemplares.getExemplares();
 
-        return persistenciaExemplares.pesquisarExemplar(nomeLivro);
+        HashSet<Exemplar> exemplaresPesquisa = new HashSet<Exemplar>();
+
+        int size = exemplares.size();
+
+        for(int i = 0; i < size; i++) {
+            if(exemplares.get(i).getLivro().getNome() == nomeLivro)
+                exemplaresPesquisa.add(exemplares.get(i));
+        }
+
+        return exemplaresPesquisa;
     }
 
     public void removerExemplar(Exemplar exemplar) {
         // TODO: Verificações
 
+        if(!hasExemplar(exemplar)) {
+            System.out.println("Não foi encontrado o exemplar:\n" + exemplar.toString() + "\n");
+            return;
+        }
+
         PersistenciaExemplares persistenciaExemplares = PersistenciaExemplares.getInstance(); 
         persistenciaExemplares.removerExemplar(exemplar);
+
+        System.out.println("O exemplar foi removido com sucesso\n");
     }
 
     public static HashSet<Exemplar> converterExemplaresEmSet() {
@@ -71,5 +88,15 @@ public final class CtrlExemplar {
         PersistenciaExemplares persistenciaExemplares = PersistenciaExemplares.getInstance();
 
         return persistenciaExemplares.getExemplares();
+    }
+
+    public boolean hasExemplar(Exemplar exemplarProcurar) {
+        ArrayList<Exemplar> exemplares = getExemplares();
+
+        for(Exemplar exemplar : exemplares) {
+            if(exemplar.equals(exemplarProcurar)) return true;
+        }
+
+        return false;
     }
 }

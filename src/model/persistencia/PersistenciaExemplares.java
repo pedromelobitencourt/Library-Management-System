@@ -1,7 +1,6 @@
 package src.model.persistencia;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 import src.model.concreta.Exemplar;
 
@@ -24,8 +23,6 @@ public final class PersistenciaExemplares {
     }
 
     public void removerExemplar(Exemplar exemplar) {
-        boolean removido = false;
-
         int size = exemplares.size();
 
         for(int i = 0; i < size; i++) {
@@ -33,26 +30,9 @@ public final class PersistenciaExemplares {
 
             if(value.getCodigo() == exemplar.getCodigo()) {
                 exemplares.remove(i);
-                removido = true;
                 break;
             }
         }
-
-        if(removido) System.out.println("O exemplar foi removido com sucesso\n");
-        else System.out.println("Não foi encontrado o exemplar:\n" + exemplar.toString());
-    }
-
-    public HashSet<Exemplar> pesquisarExemplar(String nomeLivro) {
-        HashSet<Exemplar> exemplaresPesquisa = new HashSet<Exemplar>();
-
-        int size = exemplares.size();
-
-        for(int i = 0; i < size; i++) {
-            if(exemplares.get(i).getLivro().getNome() == nomeLivro)
-                exemplaresPesquisa.add(exemplares.get(i));
-        }
-
-        return exemplaresPesquisa;
     }
 
     public ArrayList<Exemplar> getExemplares() {

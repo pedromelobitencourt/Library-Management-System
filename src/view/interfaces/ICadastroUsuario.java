@@ -68,8 +68,6 @@ public final class ICadastroUsuario {
 
             senhaUsuario = input.next();
 
-            // TODO: Validar senha
-
             senha = senhaUsuario;
             break;
         }
@@ -84,8 +82,6 @@ public final class ICadastroUsuario {
         Usuario usuario = new Usuario(nome, cpf, senha, endereco);
 
         CtrlUsuarios.getInstance().cadastrarUsuario(usuario);
-
-        System.out.println("Cadastro realizado com sucesso\n");
     }
 
     private static void ruaUsuario() {
