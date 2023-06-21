@@ -3,7 +3,7 @@ package src.view.interfaces;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import src.controllers.CtrlUsuarios;
+import src.controllers.CtrlUsuario;
 import src.model.concreta.Usuario;
 
 public class ILogin {
@@ -71,7 +71,7 @@ public class ILogin {
                 case LOGAR:
                     obterDados();
 
-                    usuario = CtrlUsuarios.getInstance().validarUsuario(cpf, senha);
+                    usuario = CtrlUsuario.getInstance().validarUsuario(cpf, senha);
 
                     if(usuario != null) { // Usuário Válido
                         System.out.println("Bem vindo, " + usuario.getNome() + "\n");

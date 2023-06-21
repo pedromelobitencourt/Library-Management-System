@@ -8,16 +8,16 @@ import src.model.concreta.Autor;
 import src.model.persistencia.PersistenciaAutores;
 
 
-public final class CtrlAutores {
-    private static CtrlAutores ctrlAutores;
+public final class CtrlAutor {
+    private static CtrlAutor ctrlAutores;
     // private static HashMap<String, Autor> autores; // Não pode ter mais de um autor com o mesmo nome
 
-    private CtrlAutores() {
+    private CtrlAutor() {
         ;
     }
 
-    public static CtrlAutores getInstance() {
-        if(ctrlAutores == null) ctrlAutores = new CtrlAutores();
+    public static CtrlAutor getInstance() {
+        if(ctrlAutores == null) ctrlAutores = new CtrlAutor();
 
         return ctrlAutores;
     }

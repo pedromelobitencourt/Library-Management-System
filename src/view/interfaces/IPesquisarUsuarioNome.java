@@ -3,7 +3,7 @@ package src.view.interfaces;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import src.controllers.CtrlUsuarios;
+import src.controllers.CtrlUsuario;
 import src.model.concreta.Usuario;
 import src.view.viewer.UsuariosViewer;
 
@@ -15,7 +15,7 @@ public class IPesquisarUsuarioNome {
 
         String opt = input.next();
 
-        CtrlUsuarios ctrlUsuarios = CtrlUsuarios.getInstance();
+        CtrlUsuario ctrlUsuarios = CtrlUsuario.getInstance();
         ArrayList<Usuario> usuarios = ctrlUsuarios.pesquisarUsuarioPeloNome(opt);
 
         verUsuarios(usuarios);

@@ -73,7 +73,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        String ans = this.getNome() + " com o cpf: " + getCpf();
+        String ans = this.getNome() + " com o cpf: '" + getCpf() + "'";
         return ans;
     }
 }

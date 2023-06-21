@@ -35,7 +35,7 @@ public class Adm extends Usuario { // Adm ter um código seria bom para ter um A
 
     @Override
     public String toString() {
-        String ans = "Administrador " + super.toString();
+        String ans = "***Administrador " + super.toString();
 
         return ans;
     }

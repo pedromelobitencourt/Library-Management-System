@@ -2,7 +2,7 @@ package src.view.interfaces;
 
 import java.util.Scanner;
 
-import src.controllers.CtrlAutores;
+import src.controllers.CtrlAutor;
 import src.model.concreta.Autor;
 
 public class ICadastroAutor {
@@ -23,7 +23,7 @@ public class ICadastroAutor {
 
         // Verificar se ja tem o autor no banco
 
-        CtrlAutores ctrlAutores = CtrlAutores.getInstance();
+        CtrlAutor ctrlAutores = CtrlAutor.getInstance();
 
         boolean existe = ctrlAutores.verificarExistenciaAutor(autor);
 

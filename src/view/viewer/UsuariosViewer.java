@@ -5,11 +5,11 @@ import src.model.concreta.Usuario;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import src.controllers.CtrlUsuarios;
+import src.controllers.CtrlUsuario;
 
 public class UsuariosViewer {
     public static void visualizarTodosUsuarios() {
-        CtrlUsuarios ctrlUsuarios = CtrlUsuarios.getInstance();
+        CtrlUsuario ctrlUsuarios = CtrlUsuario.getInstance();
 
         HashMap<String, Usuario> usuarios = ctrlUsuarios.getUsuarios();
 

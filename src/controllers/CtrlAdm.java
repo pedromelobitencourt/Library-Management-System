@@ -22,7 +22,7 @@ public final class CtrlAdm {
     }
 
     public void promoverAdm(String cpf) {
-        CtrlUsuarios ctrlUsuarios = CtrlUsuarios.getInstance();
+        CtrlUsuario ctrlUsuarios = CtrlUsuario.getInstance();
 
         ArrayList<Usuario> usuarios = ctrlUsuarios.pesquisarUsuarioPeloCPF(cpf);
 
@@ -59,7 +59,7 @@ public final class CtrlAdm {
 
     public void removerAdm(String cpf) {
         PersistenciaUsuarios persistenciaUsuarios = PersistenciaUsuarios.getInstance();
-        CtrlUsuarios ctrlUsuarios = CtrlUsuarios.getInstance();
+        CtrlUsuario ctrlUsuarios = CtrlUsuario.getInstance();
 
         Adm adm = pesquisarAdm(cpf);
 

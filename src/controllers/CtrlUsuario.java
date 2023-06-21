@@ -8,16 +8,16 @@ import src.model.concreta.Usuario;
 import src.model.persistencia.PersistenciaUsuarios;
 import src.view.interfaces.ILogin;
 
-public final class CtrlUsuarios { // Singleton tem final
-    private static CtrlUsuarios instancia;
+public final class CtrlUsuario { // Singleton tem final
+    private static CtrlUsuario instancia;
 
-    private CtrlUsuarios() {
+    private CtrlUsuario() {
         ;
     }
 
-    public static CtrlUsuarios getInstance() { // Apenas terá uma instância em todo o programa : Singleton
+    public static CtrlUsuario getInstance() { // Apenas terá uma instância em todo o programa : Singleton
         if (instancia == null) {
-            instancia = new CtrlUsuarios();
+            instancia = new CtrlUsuario();
         }
         return instancia;
     }

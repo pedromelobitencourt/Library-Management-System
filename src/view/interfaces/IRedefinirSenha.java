@@ -2,7 +2,7 @@ package src.view.interfaces;
 
 import java.util.Scanner;
 
-import src.controllers.CtrlUsuarios;
+import src.controllers.CtrlUsuario;
 
 public final class IRedefinirSenha {
     private final static String CANCELAR = "0";
@@ -20,7 +20,7 @@ public final class IRedefinirSenha {
 
         if(opt.equals(CANCELAR)) return;
 
-        CtrlUsuarios ctrlUsuarios = CtrlUsuarios.getInstance();
+        CtrlUsuario ctrlUsuarios = CtrlUsuario.getInstance();
 
         ctrlUsuarios.redefinirSenha(opt);
     }

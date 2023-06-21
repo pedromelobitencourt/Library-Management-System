@@ -2,7 +2,7 @@ package src.view.interfaces;
 
 import java.util.Scanner;
 
-import src.controllers.CtrlUsuarios;
+import src.controllers.CtrlUsuario;
 
 public class IRemoverUsuario {
     private static char CANCELAR = '0';
@@ -28,7 +28,7 @@ public class IRemoverUsuario {
                 default:
                     String cpf = opt;
 
-                    CtrlUsuarios ctrlUsuarios = CtrlUsuarios.getInstance();
+                    CtrlUsuario ctrlUsuarios = CtrlUsuario.getInstance();
                     ctrlUsuarios.removerUsuario(cpf);
 
                     sair = true;

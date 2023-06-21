@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import src.model.concreta.Usuario;
-import src.controllers.CtrlUsuarios;
+import src.controllers.CtrlUsuario;
 import src.model.concreta.Endereco;
 
 public final class ICadastroUsuario {
@@ -81,7 +81,7 @@ public final class ICadastroUsuario {
         Endereco endereco = new Endereco(rua, numeroEndereco, cep);
         Usuario usuario = new Usuario(nome, cpf, senha, endereco);
 
-        CtrlUsuarios.getInstance().cadastrarUsuario(usuario);
+        CtrlUsuario.getInstance().cadastrarUsuario(usuario);
     }
 
     private static void ruaUsuario() {

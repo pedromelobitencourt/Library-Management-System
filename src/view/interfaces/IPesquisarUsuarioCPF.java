@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import src.model.concreta.Usuario;
 import src.view.viewer.UsuariosViewer;
-import src.controllers.CtrlUsuarios;
+import src.controllers.CtrlUsuario;
 
 public class IPesquisarUsuarioCPF {
     public static void executarInterface() {
@@ -15,7 +15,7 @@ public class IPesquisarUsuarioCPF {
 
         String opt = input.next();
 
-        CtrlUsuarios ctrlUsuarios = CtrlUsuarios.getInstance();
+        CtrlUsuario ctrlUsuarios = CtrlUsuario.getInstance();
         ArrayList<Usuario> usuarios = ctrlUsuarios.pesquisarUsuarioPeloCPF(opt);
             
         verUsuarios(usuarios);

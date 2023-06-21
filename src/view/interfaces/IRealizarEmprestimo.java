@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import src.controllers.CtrlEmprestimo;
 import src.controllers.CtrlExemplar;
-import src.controllers.CtrlUsuarios;
+import src.controllers.CtrlUsuario;
 import src.model.concreta.Exemplar;
 import src.model.concreta.Usuario;
 
@@ -41,7 +41,7 @@ public class IRealizarEmprestimo {
 
         boolean sair = false;
 
-        CtrlUsuarios ctrlUsuarios = CtrlUsuarios.getInstance();
+        CtrlUsuario ctrlUsuarios = CtrlUsuario.getInstance();
 
         while(!sair) {
             System.out.println("Digite o CPF do usuário");
