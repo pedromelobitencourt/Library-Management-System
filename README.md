@@ -1,8 +1,8 @@
 # Library Management System
 The Library Management System is a software system designed to facilitate the management and operation of a library. It provides features for administrators to manage books, publishers, users, and copies of books, as well as functionalities for users to borrow books and search for books in English.
 
-Features
-Administrator Functions:
+## Features
+### Administrator Functions:
 
 Add and manage books: Administrators can add new books to the library system, along with their relevant information such as title, author and language.
 
@@ -14,7 +14,7 @@ Manage copies of books: Administrators can add and manage copies of books availa
 
 
 
-User Functions:
+### User Functions:
 
 Borrow books: Users can borrow available books from the library by providing their user credentials and selecting the desired book.
 
@@ -22,6 +22,8 @@ Return books: Users can return books they have borrowed, making them available f
 
 Search books: Users can search for books available in the library system
 
+
+## IMPORTANT
 
 Initially, There is only ONE registered user, that is the main adm
 
