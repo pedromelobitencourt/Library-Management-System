@@ -1,5 +1,5 @@
 # Library Management System
-The Library Management System is a software system designed to facilitate the management and operation of a library. It provides features for administrators to manage books, publishers, users, and copies of books, as well as functionalities for users to borrow books and search for books in English.
+The Library Management System is a software system designed to facilitate the management and operation of a library. It provides features for administrators to manage books, publishers, users, and copies of books, as well as functionalities for users to borrow books and search for books.
 
 ## Features
 ### Administrator Functions:
