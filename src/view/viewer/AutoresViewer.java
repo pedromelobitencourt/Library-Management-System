@@ -11,6 +11,11 @@ public final class AutoresViewer {
 
         HashMap<String, Autor> autores = ctrlAutores.getAutores();
 
+        if(autores.size() == 0) {
+            System.out.println("Não há nenhum autor cadastrado\n");
+            return;
+        }
+
         for(Autor autor : autores.values()) {
             System.out.println(autor);
         }

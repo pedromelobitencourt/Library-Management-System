@@ -13,12 +13,21 @@ public class UsuariosViewer {
 
         HashMap<String, Usuario> usuarios = ctrlUsuarios.getUsuarios();
 
+        if(usuarios.size() == 0) {
+            System.out.println("Não há usuários cadastrados\n");
+            return;
+        }
+
         for(Usuario usuario : usuarios.values())
             System.out.println(usuario + "\n");
         System.out.println("\n");
     }
 
     public static void visualizarUsuarios(ArrayList<Usuario> usuarios) {
+        if(usuarios.size() == 0) {
+            System.out.println("Não há nenhum usuário com tais filtros\n");
+        }
+
         for(Usuario usuario : usuarios) {
             System.out.println(usuario + "\n");
         }

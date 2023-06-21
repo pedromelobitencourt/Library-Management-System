@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import src.model.concreta.Emprestimo;
+import src.model.concreta.Usuario;
+import src.view.viewer.EmprestimosViewer;
 import src.view.viewer.UsuariosViewer;
 
 public class IMenu {
@@ -49,6 +52,7 @@ public class IMenu {
     private static void executarOpcaoAdicional(int opt) {
         // Funções de um usuário comum
         final int PESQUISAR = IUsuario.getConstPesquisar();
+        final int VISUALIZAR_PROPRIOS_EMPRESTIMOS = IUsuario.getConstVisualizarPropriosEmprestimos();
         final int SAIR = IUsuario.getConstSair();
 
         // Funções do Adm
@@ -81,13 +85,19 @@ public class IMenu {
             ICadastroExemplar.executarInterface();
         }
         else if(opt == GERENCIAR_EMPRESTIMO) {
-            // Corpo vazio
+            IGerenciarEmprestimo.executarInterface();
         }
         else if(opt == REMOVER_ADM) {
             IRemoverAdm.executarInterface();
         }
         else if(opt == VISUALIZAR_USUARIOS) {
             UsuariosViewer.visualizarTodosUsuarios();
+        }
+        else if(opt == VISUALIZAR_PROPRIOS_EMPRESTIMOS) {
+            Usuario usuario = ILogin.getUsuarioLogado();
+            ArrayList<Emprestimo> emprestimos = usuario.getEmprestimos();
+
+            EmprestimosViewer.visualizarEmprestimos(emprestimos);
         }
     }
 }

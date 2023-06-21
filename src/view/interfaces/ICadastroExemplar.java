@@ -14,5 +14,7 @@ public class ICadastroExemplar {
 
         CtrlExemplar ctrlExemplar = CtrlExemplar.getInstance();
         ctrlExemplar.cadastrarExemplar(livro);
+
+        System.out.println("Cadastro do exemplar realizado com sucesso");
     }
 }

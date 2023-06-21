@@ -5,11 +5,11 @@ import java.util.ArrayList; // Unordered Map: Achar os usuarios pelo cpf
 import src.view.interfaces.IUsuario;
 
 public class Usuario {
-    private String nome;
-    private final String cpf; // Loga pelo cpf
-    private String senha;
-    private Endereco endereco;
-    private ArrayList<Emprestimo> emprestimos;
+    protected String nome;
+    protected final String cpf; // Loga pelo cpf
+    protected String senha;
+    protected Endereco endereco;
+    protected ArrayList<Emprestimo> emprestimos;
 
     public Usuario(String nome, String cpf, String senha, Endereco endereco) {
         // TODO: Verificar exceções : Kécia disse que quem faz é quem recebe parâmetros
@@ -59,16 +59,19 @@ public class Usuario {
         return this.endereco;
     }
 
-    public void addEmprestimo(Emprestimo emprestimo) {
-        // TODO: Verificar se o emprestimo é do mesmo usuário
-
-        this.emprestimos.add(emprestimo);
+    public ArrayList<Emprestimo> getEmprestimos() {
+        return emprestimos;
     }
 
     public void executarInterface() {
         IUsuario.executarInterface();
     }
 
+    public boolean equals(Usuario usuario) {
+        return this.cpf == usuario.getCpf();
+    }
+
+    @Override
     public String toString() {
         String ans = this.getNome() + " com o cpf: " + getCpf();
         return ans;

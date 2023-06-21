@@ -45,7 +45,7 @@ public class IAdm extends IUsuario {
 
 
         CADASTRAR_LIVRO = id++;
-        final String DESC_CADASTRAR_LIVRO = "Digite " + CADASTRAR_LIVRO + " para cadastrar um livro";
+        final String DESC_CADASTRAR_LIVRO = "Digite " + CADASTRAR_LIVRO + " para cadastrar um exemplar";
         optionsId.add(CADASTRAR_LIVRO);
         optionsDesc.add(DESC_CADASTRAR_LIVRO);
 
@@ -73,7 +73,7 @@ public class IAdm extends IUsuario {
     }
 
     private static void opcaoSairUltima() { // Deixar a opção de sair da conta como a última no menu
-        int indiceSair = 1;
+        int indiceSair = 2;
 
         int id = optionsId.get(indiceSair);
         String desc = optionsDesc.get(indiceSair);

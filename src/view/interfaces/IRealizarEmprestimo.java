@@ -25,6 +25,7 @@ public class IRealizarEmprestimo {
         boolean sair = false;
 
         obterUsuario();
+        System.out.println();
 
         if(cancelar) return;
 
@@ -35,6 +36,8 @@ public class IRealizarEmprestimo {
         CtrlEmprestimo ctrlEmprestimo = CtrlEmprestimo.getInstance();
 
         ctrlEmprestimo.emprestar(usuario, exemplar);
+
+        System.out.println("Empréstimo realizado com sucesso\n");
     }
 
     private static void obterUsuario() {
@@ -45,8 +48,9 @@ public class IRealizarEmprestimo {
         CtrlUsuarios ctrlUsuarios = CtrlUsuarios.getInstance();
 
         while(!sair) {
-            System.out.print("Digite o CPF do usuário: ");
+            System.out.println("Digite o CPF do usuário");
             System.out.println("Digite " + CANCELAR_USUARIO + " para cancelar a operação");
+            System.out.print("Sua opção: ");
             String cpf = input.next();
 
             if(cpf.equals(CANCELAR_USUARIO)) {
@@ -74,7 +78,7 @@ public class IRealizarEmprestimo {
         CtrlExemplar ctrlExemplar = CtrlExemplar.getInstance();
 
         while(!sair) {
-            System.out.print("Digite o código do exemplar: ");
+            System.out.println("Digite o código do exemplar");
             System.out.println("Digite " + CANCELAR_EXEMPLAR + " para cancelar a operação");
             int codigo;
 
@@ -102,6 +106,7 @@ public class IRealizarEmprestimo {
             }
             else {
                 exemplar = exemplarPesquisa;
+                sair = true;
             }
         }
     }

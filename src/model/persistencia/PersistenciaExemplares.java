@@ -38,7 +38,7 @@ public final class PersistenciaExemplares {
             }
         }
 
-        if(removido) System.out.println("O exemplar foi removido com sucesso");
+        if(removido) System.out.println("O exemplar foi removido com sucesso\n");
         else System.out.println("Não foi encontrado o exemplar:\n" + exemplar.toString());
     }
 

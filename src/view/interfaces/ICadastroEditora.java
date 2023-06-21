@@ -46,7 +46,7 @@ public class ICadastroEditora {
         Scanner input = new Scanner(System.in);
 
         while(true) {
-            System.out.println("Digite o nome da editora do livro: ");
+            System.out.print("Digite o nome da editora do livro: ");
 
             nomeEditoraCadastro = input.nextLine();
 
@@ -63,7 +63,7 @@ public class ICadastroEditora {
         Scanner input = new Scanner(System.in);
 
         while(true) {
-            System.out.println("Digite o nome da rua da editora do livro: ");
+            System.out.print("Digite o nome da rua da editora do livro: ");
 
             nomeRuaEditoraCadastro = input.nextLine();
 
@@ -80,7 +80,7 @@ public class ICadastroEditora {
         Scanner input = new Scanner(System.in);
 
         while(true) {
-            System.out.println("Digite o número do endereço da editora do livro: ");
+            System.out.print("Digite o número do endereço da editora do livro: ");
 
             numeroEnderecoEditoraCadastro = input.nextInt();
 
@@ -97,7 +97,7 @@ public class ICadastroEditora {
         Scanner input = new Scanner(System.in);
 
         while(true) {
-            System.out.println("Digite o cep do endereço da editora do livro: ");
+            System.out.print("Digite o cep do endereço da editora do livro: ");
 
             cepEditoraCadastro = input.nextLong();
 

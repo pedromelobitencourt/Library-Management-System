@@ -51,7 +51,7 @@ public final class CtrlExemplar {
         PersistenciaExemplares persistenciaExemplares = PersistenciaExemplares.getInstance(); 
 
         if (persistenciaExemplares.getExemplares().size() == 0) {
-            throw new IllegalStateException("Não há nenhum exemplar cadastrado");
+            throw new IllegalStateException("Não há nenhum exemplar cadastrado\n");
         }
 
         return new HashSet<>(persistenciaExemplares.getExemplares());

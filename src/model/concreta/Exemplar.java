@@ -33,6 +33,10 @@ public class Exemplar {
         return this.livro;
     }
 
+    public boolean equals(Exemplar exemplar) {
+        return this.codigo == exemplar.getCodigo();
+    }
+
     @Override
     public String toString() {
         String ans = this.getLivro().toString();

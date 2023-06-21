@@ -26,6 +26,7 @@ public class ICadastroLivro {
         cadastroIsbn();
         System.out.println();
         cadastroIdioma();
+        System.out.println();
 
         // Escolher autor
 
@@ -52,7 +53,7 @@ public class ICadastroLivro {
         Scanner input = new Scanner(System.in);
 
         while(true) {
-            System.out.println("Digite o nome do livro: ");
+            System.out.print("Digite o nome do livro: ");
 
             nome = input.nextLine();
 
@@ -69,7 +70,7 @@ public class ICadastroLivro {
         Scanner input = new Scanner(System.in);
 
         while(true) {
-            System.out.println("Digite o ISBN do livro: ");
+            System.out.print("Digite o ISBN do livro: ");
 
             isbnCadastro = input.nextLong();
 
@@ -86,7 +87,7 @@ public class ICadastroLivro {
         Scanner input = new Scanner(System.in);
 
         while(true) {
-            System.out.println("Digite o idioma do livro: ");
+            System.out.print("Digite o idioma do livro: ");
 
             idiomaCadastro = input.next();
 

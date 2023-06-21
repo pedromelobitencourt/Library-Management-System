@@ -13,6 +13,8 @@ public class ILogin {
     private static String cpf;
     private static String senha;
 
+    private static Usuario usuario;
+
     private static boolean validarCpf() { // TODO: Lançar exceções
         int size = cpf.length();
     
@@ -69,7 +71,7 @@ public class ILogin {
                 case LOGAR:
                     obterDados();
 
-                    Usuario usuario = CtrlUsuarios.getInstance().validarUsuario(cpf, senha);
+                    usuario = CtrlUsuarios.getInstance().validarUsuario(cpf, senha);
 
                     if(usuario != null) { // Usuário Válido
                         System.out.println("Bem vindo, " + usuario.getNome() + "\n");
@@ -88,5 +90,9 @@ public class ILogin {
                     break;
             }
         }
+    }
+
+    public static Usuario getUsuarioLogado() {
+        return usuario;
     }
 }

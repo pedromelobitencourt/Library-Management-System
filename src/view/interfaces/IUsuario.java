@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class IUsuario {
     protected final static int PESQUISAR = 1;
+    protected final static int VISUALIZAR_PROPRIOS_EMPRESTIMOS = 2;
     protected final static int SAIR = 0;
 
     protected static int MENOR_ID_DISPONIVEL = 2; // Se adicionar opção na interface do usuário, aumentar
@@ -18,10 +19,13 @@ public class IUsuario {
         optionsId.add(PESQUISAR);
         optionsDesc.add("Digite " + PESQUISAR + " para pesquisar um exemplar");
 
+        optionsId.add(VISUALIZAR_PROPRIOS_EMPRESTIMOS);
+        optionsDesc.add("Digite " + VISUALIZAR_PROPRIOS_EMPRESTIMOS + " para visualizar seus empréstimos");
+
         optionsId.add(SAIR);
         optionsDesc.add("Digite " + SAIR + " para sair de sua conta");
 
-        MENOR_ID_DISPONIVEL = 2;
+        MENOR_ID_DISPONIVEL = 3;
     }
 
     public static void executarInterface() {
@@ -36,5 +40,9 @@ public class IUsuario {
 
     public static int getConstSair() {
         return SAIR;
+    }
+
+    public static int getConstVisualizarPropriosEmprestimos() {
+        return VISUALIZAR_PROPRIOS_EMPRESTIMOS;
     }
 }

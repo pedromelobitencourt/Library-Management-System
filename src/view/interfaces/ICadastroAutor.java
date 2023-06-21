@@ -40,7 +40,7 @@ public class ICadastroAutor {
         Scanner input = new Scanner(System.in);
 
         while(true) {
-            System.out.println("Digite o nome do autor do livro: ");
+            System.out.print("Digite o nome do autor do livro: ");
 
             nomeAutorCadastro = input.nextLine();
 
@@ -57,7 +57,7 @@ public class ICadastroAutor {
         Scanner input = new Scanner(System.in);
 
         while(true) {
-            System.out.println("Digite o nacionalidade do autor do livro: ");
+            System.out.print("Digite o nacionalidade do autor do livro: ");
 
             nacionalidadeCadastro = input.nextLine();
 

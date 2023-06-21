@@ -30,7 +30,7 @@ public final class ICadastroUsuario {
         Scanner input = new Scanner(System.in);
 
         while(true) {
-            System.out.println("Digite o nome do usuário: ");
+            System.out.print("Digite o nome do usuário: ");
 
             nomeUsuario = input.nextLine();
 
@@ -47,7 +47,7 @@ public final class ICadastroUsuario {
         Scanner input = new Scanner(System.in);
 
         while(true) {
-            System.out.println("Digite o cpf do usuário: ");
+            System.out.print("Digite o cpf do usuário: ");
 
             cpfUsuario = input.next();
 
@@ -64,7 +64,7 @@ public final class ICadastroUsuario {
         Scanner input = new Scanner(System.in);
 
         while(true) {
-            System.out.println("Digite a senha do usuário: ");
+            System.out.print("Digite a senha do usuário: ");
 
             senhaUsuario = input.next();
 
@@ -94,7 +94,7 @@ public final class ICadastroUsuario {
         Scanner input = new Scanner(System.in);
 
         while(true) {
-            System.out.println("Digite a rua do usuário: ");
+            System.out.print("Digite a rua do usuário: ");
 
             ruaUsuario = input.next();
 
@@ -111,7 +111,7 @@ public final class ICadastroUsuario {
         Scanner input = new Scanner(System.in);
 
         while(true) {
-            System.out.println("Digite o número do endereço do usuário: ");
+            System.out.print("Digite o número do endereço do usuário: ");
 
             try {
                 numeroEnd = input.nextInt();
@@ -132,7 +132,7 @@ public final class ICadastroUsuario {
         Scanner input = new Scanner(System.in);
 
         while(true) {
-            System.out.println("Digite o cep do endereço do usuário: ");
+            System.out.print("Digite o cep do endereço do usuário: ");
 
             try {
                 cepUsuario = input.nextLong();
