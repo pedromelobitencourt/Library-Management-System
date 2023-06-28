@@ -1,6 +1,6 @@
 package src.model.concreta;
 
-import java.util.ArrayList; // Unordered Map: Achar os usuarios pelo cpf
+import java.util.ArrayList;
 
 import src.view.interfaces.IUsuario;
 
@@ -11,9 +11,7 @@ public class Usuario {
     protected Endereco endereco;
     protected ArrayList<Emprestimo> emprestimos;
 
-    public Usuario(String nome, String cpf, String senha, Endereco endereco) {
-        // TODO: Verificar exceções : Kécia disse que quem faz é quem recebe parâmetros
-        
+    public Usuario(String nome, String cpf, String senha, Endereco endereco) {        
         this.nome = nome;
         this.cpf = cpf;
         this.senha = senha;

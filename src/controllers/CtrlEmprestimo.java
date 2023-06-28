@@ -65,7 +65,7 @@ public final class CtrlEmprestimo {
     }
 
     private void renovar(Emprestimo emprestimo) {
-        if(!dataRenovacaoValida(emprestimo)) {
+        if(!isDataRenovacaoValida(emprestimo)) {
             System.out.println("Passou da data de renovação");
             System.out.println("Não pode realizar a renovação\n");
             return;
@@ -127,7 +127,7 @@ public final class CtrlEmprestimo {
         return null;
     }
 
-    private boolean dataRenovacaoValida(Emprestimo emprestimo) {
+    private boolean isDataRenovacaoValida(Emprestimo emprestimo) {
         Calendar data = emprestimo.getData();
 
         Calendar dataPrevista = (Calendar) data.clone();
