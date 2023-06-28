@@ -30,3 +30,19 @@ Initially, There is only ONE registered user, that is the main adm
 Its "cpf" is: 1
 
 Its "senha" is: senhasenha
+
+The program interface runs in the terminal
+
+Follow the instructions that are on the menu to do what you wanna do
+
+## IMPORTANTE (PORTUGUESE VERSION)
+
+Inicialmente, há apenas UM usuário registrado, que é o administrador principal.
+
+Seu "cpf" é: 1
+
+Sua "senha" é: senhasenha
+
+A interface do programa é executada no terminal.
+
+Siga as instruções que estão no menu para fazer o que você deseja fazer.
